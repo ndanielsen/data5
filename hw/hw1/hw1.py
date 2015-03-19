@@ -58,7 +58,12 @@ class BurittoFoo(object):
 		PART 4: create a list (or set) of all unique sodas and soft drinks that they sell
 		Note: just look for 'Canned Soda' and 'Canned Soft Drink', and ignore other drinks like 'Izze'
 		'''
-		pass
+		can = "Canned Soda"
+		soft = "Canned Soft Drink"
+
+		sodaset = [soda[3].strip('[]') for soda in self.orders if soda[2] == can or soda[2] == soft]
+
+		return set(sodaset)
 
 
 	def part5(self):
@@ -93,4 +98,4 @@ if __name__ == "__main__":
 	assert 1+1 == 2
 
 	burrito = BurittoFoo('orders.tsv')
-	print burrito.part3()
+	print burrito.part4()
