@@ -11,13 +11,24 @@ import csv
 
 
 class BurittoFoo(object):
+	"""
+	Made to order class to analyze mexico food, costs and ingredients.
+
+	Data Header
+	['order_id', 'quantity', 'item_name', 'choice_description', 'item_price']
+	"""
+
 
 	def __init__(self, file):
-		self._file = open(file, 'rU')
+		self._file = open(file, 'rU') # is there a better way to do this?
 
 		self.data = [line for line in csv.reader(self._file, delimiter='\t')]
 
 		self.header = self.data[0]
+
+		self.orders = self.data[1:]
+
+		self.totalcost = sum([float(row[4][1:].strip(' ')) for row in self.orders])
 
 	def part1(self):
 		
@@ -25,14 +36,13 @@ class BurittoFoo(object):
 		PART 1: read in the data, parse it, and store it in a list of lists called 'data'
 		Hint: this is a tsv file, and csv.reader() needs to be told how to handle it
 		'''
-		pass
-
+		return self.datadump
 
 	def part2(self):
 		'''
 		PART 2: separate the header and data into two different lists
 		'''
-		pass
+		return self.header, self.data
 
 	def part3(self):
 
@@ -41,7 +51,7 @@ class BurittoFoo(object):
 		Hint: examine the data to see if the 'quantity' column is relevant to this calculation
 		Hint: work smarter, not harder! (this can be done in a few lines of code)
 		'''
-		pass
+		return self.totalcost / len(self.orders)
 
 	def part4(self):
 		'''
@@ -68,7 +78,7 @@ class BurittoFoo(object):
 		Note: please take the 'quantity' column into account!
 		Advanced: learn how to use 'defaultdict' to simplify your code
 		'''
-		pass
+		pass 
 
 
 
@@ -77,9 +87,10 @@ class BurittoFoo(object):
 
 
 
+
 if __name__ == "__main__":
 	print "hello"
 	assert 1+1 == 2
 
 	burrito = BurittoFoo('orders.tsv')
-	print burrito.header
+	print burrito.part3()
