@@ -1,0 +1,729 @@
+{
+ "metadata": {
+  "name": ""
+ },
+ "nbformat": 3,
+ "nbformat_minor": 0,
+ "worksheets": [
+  {
+   "cells": [
+    {
+     "cell_type": "code",
+     "collapsed": false,
+     "input": [
+      "f = open('airline-safety.csv', 'rU')\n",
+      "         "
+     ],
+     "language": "python",
+     "metadata": {},
+     "outputs": [],
+     "prompt_number": 23
+    },
+    {
+     "cell_type": "code",
+     "collapsed": false,
+     "input": [
+      "f"
+     ],
+     "language": "python",
+     "metadata": {},
+     "outputs": [
+      {
+       "metadata": {},
+       "output_type": "pyout",
+       "prompt_number": 24,
+       "text": [
+        "<open file 'airline-safety.csv', mode 'rU' at 0x7fdd006336f0>"
+       ]
+      }
+     ],
+     "prompt_number": 24
+    },
+    {
+     "cell_type": "code",
+     "collapsed": false,
+     "input": [
+      "something = f.read()\n",
+      "f.close()\n",
+      "print something"
+     ],
+     "language": "python",
+     "metadata": {},
+     "outputs": [
+      {
+       "output_type": "stream",
+       "stream": "stdout",
+       "text": [
+        "airline,avail_seat_km_per_week,incidents_85_99,fatal_accidents_85_99,fatalities_85_99,incidents_00_14,fatal_accidents_00_14,fatalities_00_14\n",
+        "Aer Lingus,320906734,2,0,0,0,0,0\n",
+        "Aeroflot*,1197672318,76,14,128,6,1,88\n",
+        "Aerolineas Argentinas,385803648,6,0,0,1,0,0\n",
+        "Aeromexico*,596871813,3,1,64,5,0,0\n",
+        "Air Canada,1865253802,2,0,0,2,0,0\n",
+        "Air France,3004002661,14,4,79,6,2,337\n",
+        "Air India*,869253552,2,1,329,4,1,158\n",
+        "Air New Zealand*,710174817,3,0,0,5,1,7\n",
+        "Alaska Airlines*,965346773,5,0,0,5,1,88\n",
+        "Alitalia,698012498,7,2,50,4,0,0\n",
+        "All Nippon Airways,1841234177,3,1,1,7,0,0\n",
+        "American*,5228357340,21,5,101,17,3,416\n",
+        "Austrian Airlines,358239823,1,0,0,1,0,0\n",
+        "Avianca,396922563,5,3,323,0,0,0\n",
+        "British Airways*,3179760952,4,0,0,6,0,0\n",
+        "Cathay Pacific*,2582459303,0,0,0,2,0,0\n",
+        "China Airlines,813216487,12,6,535,2,1,225\n",
+        "Condor,417982610,2,1,16,0,0,0\n",
+        "COPA,550491507,3,1,47,0,0,0\n",
+        "Delta / Northwest*,6525658894,24,12,407,24,2,51\n",
+        "Egyptair,557699891,8,3,282,4,1,14\n",
+        "El Al,335448023,1,1,4,1,0,0\n",
+        "Ethiopian Airlines,488560643,25,5,167,5,2,92\n",
+        "Finnair,506464950,1,0,0,0,0,0\n",
+        "Garuda Indonesia,613356665,10,3,260,4,2,22\n",
+        "Gulf Air,301379762,1,0,0,3,1,143\n",
+        "Hawaiian Airlines,493877795,0,0,0,1,0,0\n",
+        "Iberia,1173203126,4,1,148,5,0,0\n",
+        "Japan Airlines,1574217531,3,1,520,0,0,0\n",
+        "Kenya Airways,277414794,2,0,0,2,2,283\n",
+        "KLM*,1874561773,7,1,3,1,0,0\n",
+        "Korean Air,1734522605,12,5,425,1,0,0\n",
+        "LAN Airlines,1001965891,3,2,21,0,0,0\n",
+        "Lufthansa*,3426529504,6,1,2,3,0,0\n",
+        "Malaysia Airlines,1039171244,3,1,34,3,2,537\n",
+        "Pakistan International,348563137,8,3,234,10,2,46\n",
+        "Philippine Airlines,413007158,7,4,74,2,1,1\n",
+        "Qantas*,1917428984,1,0,0,5,0,0\n",
+        "Royal Air Maroc,295705339,5,3,51,3,0,0\n",
+        "SAS*,682971852,5,0,0,6,1,110\n",
+        "Saudi Arabian,859673901,7,2,313,11,0,0\n",
+        "Singapore Airlines,2376857805,2,2,6,2,1,83\n",
+        "South African,651502442,2,1,159,1,0,0\n",
+        "Southwest Airlines,3276525770,1,0,0,8,0,0\n",
+        "Sri Lankan / AirLanka,325582976,2,1,14,4,0,0\n",
+        "SWISS*,792601299,2,1,229,3,0,0\n",
+        "TACA,259373346,3,1,3,1,1,3\n",
+        "TAM,1509195646,8,3,98,7,2,188\n",
+        "TAP - Air Portugal,619130754,0,0,0,0,0,0\n",
+        "Thai Airways,1702802250,8,4,308,2,1,1\n",
+        "Turkish Airlines,1946098294,8,3,64,8,2,84\n",
+        "United / Continental*,7139291291,19,8,319,14,2,109\n",
+        "US Airways / America West*,2455687887,16,7,224,11,2,23\n",
+        "Vietnam Airlines,625084918,7,3,171,1,0,0\n",
+        "Virgin Atlantic,1005248585,1,0,0,0,0,0\n",
+        "Xiamen Airlines,430462962,9,1,82,2,0,0\n"
+       ]
+      }
+     ],
+     "prompt_number": 25
+    },
+    {
+     "cell_type": "code",
+     "collapsed": false,
+     "input": [
+      "with open('airline-safety.csv', 'rU') as g:\n",
+      "    var =  g.readlines()"
+     ],
+     "language": "python",
+     "metadata": {},
+     "outputs": [],
+     "prompt_number": 32
+    },
+    {
+     "cell_type": "code",
+     "collapsed": false,
+     "input": [
+      "var[0]"
+     ],
+     "language": "python",
+     "metadata": {},
+     "outputs": [
+      {
+       "metadata": {},
+       "output_type": "pyout",
+       "prompt_number": 34,
+       "text": [
+        "'airline,avail_seat_km_per_week,incidents_85_99,fatal_accidents_85_99,fatalities_85_99,incidents_00_14,fatal_accidents_00_14,fatalities_00_14\\n'"
+       ]
+      }
+     ],
+     "prompt_number": 34
+    },
+    {
+     "cell_type": "code",
+     "collapsed": false,
+     "input": [
+      "var[1]"
+     ],
+     "language": "python",
+     "metadata": {},
+     "outputs": [
+      {
+       "metadata": {},
+       "output_type": "pyout",
+       "prompt_number": 35,
+       "text": [
+        "'Aer Lingus,320906734,2,0,0,0,0,0\\n'"
+       ]
+      }
+     ],
+     "prompt_number": 35
+    },
+    {
+     "cell_type": "code",
+     "collapsed": false,
+     "input": [
+      "import csv"
+     ],
+     "language": "python",
+     "metadata": {},
+     "outputs": [],
+     "prompt_number": 36
+    },
+    {
+     "cell_type": "code",
+     "collapsed": false,
+     "input": [
+      "with open('airline-safety.csv', 'rU') as g:\n",
+      "    var =  [row for row in csv.reader(g)]"
+     ],
+     "language": "python",
+     "metadata": {},
+     "outputs": [],
+     "prompt_number": 37
+    },
+    {
+     "cell_type": "code",
+     "collapsed": false,
+     "input": [
+      "var"
+     ],
+     "language": "python",
+     "metadata": {},
+     "outputs": [
+      {
+       "metadata": {},
+       "output_type": "pyout",
+       "prompt_number": 38,
+       "text": [
+        "[['airline',\n",
+        "  'avail_seat_km_per_week',\n",
+        "  'incidents_85_99',\n",
+        "  'fatal_accidents_85_99',\n",
+        "  'fatalities_85_99',\n",
+        "  'incidents_00_14',\n",
+        "  'fatal_accidents_00_14',\n",
+        "  'fatalities_00_14'],\n",
+        " ['Aer Lingus', '320906734', '2', '0', '0', '0', '0', '0'],\n",
+        " ['Aeroflot*', '1197672318', '76', '14', '128', '6', '1', '88'],\n",
+        " ['Aerolineas Argentinas', '385803648', '6', '0', '0', '1', '0', '0'],\n",
+        " ['Aeromexico*', '596871813', '3', '1', '64', '5', '0', '0'],\n",
+        " ['Air Canada', '1865253802', '2', '0', '0', '2', '0', '0'],\n",
+        " ['Air France', '3004002661', '14', '4', '79', '6', '2', '337'],\n",
+        " ['Air India*', '869253552', '2', '1', '329', '4', '1', '158'],\n",
+        " ['Air New Zealand*', '710174817', '3', '0', '0', '5', '1', '7'],\n",
+        " ['Alaska Airlines*', '965346773', '5', '0', '0', '5', '1', '88'],\n",
+        " ['Alitalia', '698012498', '7', '2', '50', '4', '0', '0'],\n",
+        " ['All Nippon Airways', '1841234177', '3', '1', '1', '7', '0', '0'],\n",
+        " ['American*', '5228357340', '21', '5', '101', '17', '3', '416'],\n",
+        " ['Austrian Airlines', '358239823', '1', '0', '0', '1', '0', '0'],\n",
+        " ['Avianca', '396922563', '5', '3', '323', '0', '0', '0'],\n",
+        " ['British Airways*', '3179760952', '4', '0', '0', '6', '0', '0'],\n",
+        " ['Cathay Pacific*', '2582459303', '0', '0', '0', '2', '0', '0'],\n",
+        " ['China Airlines', '813216487', '12', '6', '535', '2', '1', '225'],\n",
+        " ['Condor', '417982610', '2', '1', '16', '0', '0', '0'],\n",
+        " ['COPA', '550491507', '3', '1', '47', '0', '0', '0'],\n",
+        " ['Delta / Northwest*', '6525658894', '24', '12', '407', '24', '2', '51'],\n",
+        " ['Egyptair', '557699891', '8', '3', '282', '4', '1', '14'],\n",
+        " ['El Al', '335448023', '1', '1', '4', '1', '0', '0'],\n",
+        " ['Ethiopian Airlines', '488560643', '25', '5', '167', '5', '2', '92'],\n",
+        " ['Finnair', '506464950', '1', '0', '0', '0', '0', '0'],\n",
+        " ['Garuda Indonesia', '613356665', '10', '3', '260', '4', '2', '22'],\n",
+        " ['Gulf Air', '301379762', '1', '0', '0', '3', '1', '143'],\n",
+        " ['Hawaiian Airlines', '493877795', '0', '0', '0', '1', '0', '0'],\n",
+        " ['Iberia', '1173203126', '4', '1', '148', '5', '0', '0'],\n",
+        " ['Japan Airlines', '1574217531', '3', '1', '520', '0', '0', '0'],\n",
+        " ['Kenya Airways', '277414794', '2', '0', '0', '2', '2', '283'],\n",
+        " ['KLM*', '1874561773', '7', '1', '3', '1', '0', '0'],\n",
+        " ['Korean Air', '1734522605', '12', '5', '425', '1', '0', '0'],\n",
+        " ['LAN Airlines', '1001965891', '3', '2', '21', '0', '0', '0'],\n",
+        " ['Lufthansa*', '3426529504', '6', '1', '2', '3', '0', '0'],\n",
+        " ['Malaysia Airlines', '1039171244', '3', '1', '34', '3', '2', '537'],\n",
+        " ['Pakistan International', '348563137', '8', '3', '234', '10', '2', '46'],\n",
+        " ['Philippine Airlines', '413007158', '7', '4', '74', '2', '1', '1'],\n",
+        " ['Qantas*', '1917428984', '1', '0', '0', '5', '0', '0'],\n",
+        " ['Royal Air Maroc', '295705339', '5', '3', '51', '3', '0', '0'],\n",
+        " ['SAS*', '682971852', '5', '0', '0', '6', '1', '110'],\n",
+        " ['Saudi Arabian', '859673901', '7', '2', '313', '11', '0', '0'],\n",
+        " ['Singapore Airlines', '2376857805', '2', '2', '6', '2', '1', '83'],\n",
+        " ['South African', '651502442', '2', '1', '159', '1', '0', '0'],\n",
+        " ['Southwest Airlines', '3276525770', '1', '0', '0', '8', '0', '0'],\n",
+        " ['Sri Lankan / AirLanka', '325582976', '2', '1', '14', '4', '0', '0'],\n",
+        " ['SWISS*', '792601299', '2', '1', '229', '3', '0', '0'],\n",
+        " ['TACA', '259373346', '3', '1', '3', '1', '1', '3'],\n",
+        " ['TAM', '1509195646', '8', '3', '98', '7', '2', '188'],\n",
+        " ['TAP - Air Portugal', '619130754', '0', '0', '0', '0', '0', '0'],\n",
+        " ['Thai Airways', '1702802250', '8', '4', '308', '2', '1', '1'],\n",
+        " ['Turkish Airlines', '1946098294', '8', '3', '64', '8', '2', '84'],\n",
+        " ['United / Continental*', '7139291291', '19', '8', '319', '14', '2', '109'],\n",
+        " ['US Airways / America West*',\n",
+        "  '2455687887',\n",
+        "  '16',\n",
+        "  '7',\n",
+        "  '224',\n",
+        "  '11',\n",
+        "  '2',\n",
+        "  '23'],\n",
+        " ['Vietnam Airlines', '625084918', '7', '3', '171', '1', '0', '0'],\n",
+        " ['Virgin Atlantic', '1005248585', '1', '0', '0', '0', '0', '0'],\n",
+        " ['Xiamen Airlines', '430462962', '9', '1', '82', '2', '0', '0']]"
+       ]
+      }
+     ],
+     "prompt_number": 38
+    },
+    {
+     "cell_type": "code",
+     "collapsed": false,
+     "input": [
+      "len(var)"
+     ],
+     "language": "python",
+     "metadata": {},
+     "outputs": [
+      {
+       "metadata": {},
+       "output_type": "pyout",
+       "prompt_number": 39,
+       "text": [
+        "57"
+       ]
+      }
+     ],
+     "prompt_number": 39
+    },
+    {
+     "cell_type": "code",
+     "collapsed": false,
+     "input": [
+      "header = var[0]"
+     ],
+     "language": "python",
+     "metadata": {},
+     "outputs": [],
+     "prompt_number": 40
+    },
+    {
+     "cell_type": "code",
+     "collapsed": false,
+     "input": [
+      "data = var[1:]"
+     ],
+     "language": "python",
+     "metadata": {},
+     "outputs": [],
+     "prompt_number": 42
+    },
+    {
+     "cell_type": "code",
+     "collapsed": false,
+     "input": [
+      "data"
+     ],
+     "language": "python",
+     "metadata": {},
+     "outputs": [
+      {
+       "metadata": {},
+       "output_type": "pyout",
+       "prompt_number": 43,
+       "text": [
+        "[['Aer Lingus', '320906734', '2', '0', '0', '0', '0', '0'],\n",
+        " ['Aeroflot*', '1197672318', '76', '14', '128', '6', '1', '88'],\n",
+        " ['Aerolineas Argentinas', '385803648', '6', '0', '0', '1', '0', '0'],\n",
+        " ['Aeromexico*', '596871813', '3', '1', '64', '5', '0', '0'],\n",
+        " ['Air Canada', '1865253802', '2', '0', '0', '2', '0', '0'],\n",
+        " ['Air France', '3004002661', '14', '4', '79', '6', '2', '337'],\n",
+        " ['Air India*', '869253552', '2', '1', '329', '4', '1', '158'],\n",
+        " ['Air New Zealand*', '710174817', '3', '0', '0', '5', '1', '7'],\n",
+        " ['Alaska Airlines*', '965346773', '5', '0', '0', '5', '1', '88'],\n",
+        " ['Alitalia', '698012498', '7', '2', '50', '4', '0', '0'],\n",
+        " ['All Nippon Airways', '1841234177', '3', '1', '1', '7', '0', '0'],\n",
+        " ['American*', '5228357340', '21', '5', '101', '17', '3', '416'],\n",
+        " ['Austrian Airlines', '358239823', '1', '0', '0', '1', '0', '0'],\n",
+        " ['Avianca', '396922563', '5', '3', '323', '0', '0', '0'],\n",
+        " ['British Airways*', '3179760952', '4', '0', '0', '6', '0', '0'],\n",
+        " ['Cathay Pacific*', '2582459303', '0', '0', '0', '2', '0', '0'],\n",
+        " ['China Airlines', '813216487', '12', '6', '535', '2', '1', '225'],\n",
+        " ['Condor', '417982610', '2', '1', '16', '0', '0', '0'],\n",
+        " ['COPA', '550491507', '3', '1', '47', '0', '0', '0'],\n",
+        " ['Delta / Northwest*', '6525658894', '24', '12', '407', '24', '2', '51'],\n",
+        " ['Egyptair', '557699891', '8', '3', '282', '4', '1', '14'],\n",
+        " ['El Al', '335448023', '1', '1', '4', '1', '0', '0'],\n",
+        " ['Ethiopian Airlines', '488560643', '25', '5', '167', '5', '2', '92'],\n",
+        " ['Finnair', '506464950', '1', '0', '0', '0', '0', '0'],\n",
+        " ['Garuda Indonesia', '613356665', '10', '3', '260', '4', '2', '22'],\n",
+        " ['Gulf Air', '301379762', '1', '0', '0', '3', '1', '143'],\n",
+        " ['Hawaiian Airlines', '493877795', '0', '0', '0', '1', '0', '0'],\n",
+        " ['Iberia', '1173203126', '4', '1', '148', '5', '0', '0'],\n",
+        " ['Japan Airlines', '1574217531', '3', '1', '520', '0', '0', '0'],\n",
+        " ['Kenya Airways', '277414794', '2', '0', '0', '2', '2', '283'],\n",
+        " ['KLM*', '1874561773', '7', '1', '3', '1', '0', '0'],\n",
+        " ['Korean Air', '1734522605', '12', '5', '425', '1', '0', '0'],\n",
+        " ['LAN Airlines', '1001965891', '3', '2', '21', '0', '0', '0'],\n",
+        " ['Lufthansa*', '3426529504', '6', '1', '2', '3', '0', '0'],\n",
+        " ['Malaysia Airlines', '1039171244', '3', '1', '34', '3', '2', '537'],\n",
+        " ['Pakistan International', '348563137', '8', '3', '234', '10', '2', '46'],\n",
+        " ['Philippine Airlines', '413007158', '7', '4', '74', '2', '1', '1'],\n",
+        " ['Qantas*', '1917428984', '1', '0', '0', '5', '0', '0'],\n",
+        " ['Royal Air Maroc', '295705339', '5', '3', '51', '3', '0', '0'],\n",
+        " ['SAS*', '682971852', '5', '0', '0', '6', '1', '110'],\n",
+        " ['Saudi Arabian', '859673901', '7', '2', '313', '11', '0', '0'],\n",
+        " ['Singapore Airlines', '2376857805', '2', '2', '6', '2', '1', '83'],\n",
+        " ['South African', '651502442', '2', '1', '159', '1', '0', '0'],\n",
+        " ['Southwest Airlines', '3276525770', '1', '0', '0', '8', '0', '0'],\n",
+        " ['Sri Lankan / AirLanka', '325582976', '2', '1', '14', '4', '0', '0'],\n",
+        " ['SWISS*', '792601299', '2', '1', '229', '3', '0', '0'],\n",
+        " ['TACA', '259373346', '3', '1', '3', '1', '1', '3'],\n",
+        " ['TAM', '1509195646', '8', '3', '98', '7', '2', '188'],\n",
+        " ['TAP - Air Portugal', '619130754', '0', '0', '0', '0', '0', '0'],\n",
+        " ['Thai Airways', '1702802250', '8', '4', '308', '2', '1', '1'],\n",
+        " ['Turkish Airlines', '1946098294', '8', '3', '64', '8', '2', '84'],\n",
+        " ['United / Continental*', '7139291291', '19', '8', '319', '14', '2', '109'],\n",
+        " ['US Airways / America West*',\n",
+        "  '2455687887',\n",
+        "  '16',\n",
+        "  '7',\n",
+        "  '224',\n",
+        "  '11',\n",
+        "  '2',\n",
+        "  '23'],\n",
+        " ['Vietnam Airlines', '625084918', '7', '3', '171', '1', '0', '0'],\n",
+        " ['Virgin Atlantic', '1005248585', '1', '0', '0', '0', '0', '0'],\n",
+        " ['Xiamen Airlines', '430462962', '9', '1', '82', '2', '0', '0']]"
+       ]
+      }
+     ],
+     "prompt_number": 43
+    },
+    {
+     "cell_type": "code",
+     "collapsed": false,
+     "input": [
+      "header"
+     ],
+     "language": "python",
+     "metadata": {},
+     "outputs": [
+      {
+       "metadata": {},
+       "output_type": "pyout",
+       "prompt_number": 44,
+       "text": [
+        "['airline',\n",
+        " 'avail_seat_km_per_week',\n",
+        " 'incidents_85_99',\n",
+        " 'fatal_accidents_85_99',\n",
+        " 'fatalities_85_99',\n",
+        " 'incidents_00_14',\n",
+        " 'fatal_accidents_00_14',\n",
+        " 'fatalities_00_14']"
+       ]
+      }
+     ],
+     "prompt_number": 44
+    },
+    {
+     "cell_type": "code",
+     "collapsed": false,
+     "input": [
+      "data[1][0]"
+     ],
+     "language": "python",
+     "metadata": {},
+     "outputs": [
+      {
+       "metadata": {},
+       "output_type": "pyout",
+       "prompt_number": 47,
+       "text": [
+        "'Aeroflot*'"
+       ]
+      }
+     ],
+     "prompt_number": 47
+    },
+    {
+     "cell_type": "code",
+     "collapsed": false,
+     "input": [
+      "subs = []\n",
+      "nonsub = []\n",
+      "\n",
+      "\n",
+      "for airline in data[:5]:\n",
+      "    if airline[0][-1] == '*':\n",
+      "        print airline\n",
+      "    \n",
+      "    "
+     ],
+     "language": "python",
+     "metadata": {},
+     "outputs": [
+      {
+       "output_type": "stream",
+       "stream": "stdout",
+       "text": [
+        "['Aeroflot*', '1197672318', '76', '14', '128', '6', '1', '88']\n",
+        "['Aeromexico*', '596871813', '3', '1', '64', '5', '0', '0']\n"
+       ]
+      }
+     ],
+     "prompt_number": 53
+    },
+    {
+     "cell_type": "code",
+     "collapsed": false,
+     "input": [
+      "this = set([1,2])\n"
+     ],
+     "language": "python",
+     "metadata": {},
+     "outputs": [],
+     "prompt_number": 54
+    },
+    {
+     "cell_type": "code",
+     "collapsed": false,
+     "input": [
+      "this"
+     ],
+     "language": "python",
+     "metadata": {},
+     "outputs": [
+      {
+       "metadata": {},
+       "output_type": "pyout",
+       "prompt_number": 55,
+       "text": [
+        "{1, 2}"
+       ]
+      }
+     ],
+     "prompt_number": 55
+    },
+    {
+     "cell_type": "code",
+     "collapsed": false,
+     "input": [
+      "type(this)\n"
+     ],
+     "language": "python",
+     "metadata": {},
+     "outputs": [
+      {
+       "metadata": {},
+       "output_type": "pyout",
+       "prompt_number": 56,
+       "text": [
+        "set"
+       ]
+      }
+     ],
+     "prompt_number": 56
+    },
+    {
+     "cell_type": "code",
+     "collapsed": false,
+     "input": [
+      "help(this)\n"
+     ],
+     "language": "python",
+     "metadata": {},
+     "outputs": [
+      {
+       "output_type": "stream",
+       "stream": "stdout",
+       "text": [
+        "Help on set object:\n",
+        "\n",
+        "class set(object)\n",
+        " |  set() -> new empty set object\n",
+        " |  set(iterable) -> new set object\n",
+        " |  \n",
+        " |  Build an unordered collection of unique elements.\n",
+        " |  \n",
+        " |  Methods defined here:\n",
+        " |  \n",
+        " |  __and__(...)\n",
+        " |      x.__and__(y) <==> x&y\n",
+        " |  \n",
+        " |  __cmp__(...)\n",
+        " |      x.__cmp__(y) <==> cmp(x,y)\n",
+        " |  \n",
+        " |  __contains__(...)\n",
+        " |      x.__contains__(y) <==> y in x.\n",
+        " |  \n",
+        " |  __eq__(...)\n",
+        " |      x.__eq__(y) <==> x==y\n",
+        " |  \n",
+        " |  __ge__(...)\n",
+        " |      x.__ge__(y) <==> x>=y\n",
+        " |  \n",
+        " |  __getattribute__(...)\n",
+        " |      x.__getattribute__('name') <==> x.name\n",
+        " |  \n",
+        " |  __gt__(...)\n",
+        " |      x.__gt__(y) <==> x>y\n",
+        " |  \n",
+        " |  __iand__(...)\n",
+        " |      x.__iand__(y) <==> x&=y\n",
+        " |  \n",
+        " |  __init__(...)\n",
+        " |      x.__init__(...) initializes x; see help(type(x)) for signature\n",
+        " |  \n",
+        " |  __ior__(...)\n",
+        " |      x.__ior__(y) <==> x|=y\n",
+        " |  \n",
+        " |  __isub__(...)\n",
+        " |      x.__isub__(y) <==> x-=y\n",
+        " |  \n",
+        " |  __iter__(...)\n",
+        " |      x.__iter__() <==> iter(x)\n",
+        " |  \n",
+        " |  __ixor__(...)\n",
+        " |      x.__ixor__(y) <==> x^=y\n",
+        " |  \n",
+        " |  __le__(...)\n",
+        " |      x.__le__(y) <==> x<=y\n",
+        " |  \n",
+        " |  __len__(...)\n",
+        " |      x.__len__() <==> len(x)\n",
+        " |  \n",
+        " |  __lt__(...)\n",
+        " |      x.__lt__(y) <==> x<y\n",
+        " |  \n",
+        " |  __ne__(...)\n",
+        " |      x.__ne__(y) <==> x!=y\n",
+        " |  \n",
+        " |  __or__(...)\n",
+        " |      x.__or__(y) <==> x|y\n",
+        " |  \n",
+        " |  __rand__(...)\n",
+        " |      x.__rand__(y) <==> y&x\n",
+        " |  \n",
+        " |  __reduce__(...)\n",
+        " |      Return state information for pickling.\n",
+        " |  \n",
+        " |  __repr__(...)\n",
+        " |      x.__repr__() <==> repr(x)\n",
+        " |  \n",
+        " |  __ror__(...)\n",
+        " |      x.__ror__(y) <==> y|x\n",
+        " |  \n",
+        " |  __rsub__(...)\n",
+        " |      x.__rsub__(y) <==> y-x\n",
+        " |  \n",
+        " |  __rxor__(...)\n",
+        " |      x.__rxor__(y) <==> y^x\n",
+        " |  \n",
+        " |  __sizeof__(...)\n",
+        " |      S.__sizeof__() -> size of S in memory, in bytes\n",
+        " |  \n",
+        " |  __sub__(...)\n",
+        " |      x.__sub__(y) <==> x-y\n",
+        " |  \n",
+        " |  __xor__(...)\n",
+        " |      x.__xor__(y) <==> x^y\n",
+        " |  \n",
+        " |  add(...)\n",
+        " |      Add an element to a set.\n",
+        " |      \n",
+        " |      This has no effect if the element is already present.\n",
+        " |  \n",
+        " |  clear(...)\n",
+        " |      Remove all elements from this set.\n",
+        " |  \n",
+        " |  copy(...)\n",
+        " |      Return a shallow copy of a set.\n",
+        " |  \n",
+        " |  difference(...)\n",
+        " |      Return the difference of two or more sets as a new set.\n",
+        " |      \n",
+        " |      (i.e. all elements that are in this set but not the others.)\n",
+        " |  \n",
+        " |  difference_update(...)\n",
+        " |      Remove all elements of another set from this set.\n",
+        " |  \n",
+        " |  discard(...)\n",
+        " |      Remove an element from a set if it is a member.\n",
+        " |      \n",
+        " |      If the element is not a member, do nothing.\n",
+        " |  \n",
+        " |  intersection(...)\n",
+        " |      Return the intersection of two or more sets as a new set.\n",
+        " |      \n",
+        " |      (i.e. elements that are common to all of the sets.)\n",
+        " |  \n",
+        " |  intersection_update(...)\n",
+        " |      Update a set with the intersection of itself and another.\n",
+        " |  \n",
+        " |  isdisjoint(...)\n",
+        " |      Return True if two sets have a null intersection.\n",
+        " |  \n",
+        " |  issubset(...)\n",
+        " |      Report whether another set contains this set.\n",
+        " |  \n",
+        " |  issuperset(...)\n",
+        " |      Report whether this set contains another set.\n",
+        " |  \n",
+        " |  pop(...)\n",
+        " |      Remove and return an arbitrary set element.\n",
+        " |      Raises KeyError if the set is empty.\n",
+        " |  \n",
+        " |  remove(...)\n",
+        " |      Remove an element from a set; it must be a member.\n",
+        " |      \n",
+        " |      If the element is not a member, raise a KeyError.\n",
+        " |  \n",
+        " |  symmetric_difference(...)\n",
+        " |      Return the symmetric difference of two sets as a new set.\n",
+        " |      \n",
+        " |      (i.e. all elements that are in exactly one of the sets.)\n",
+        " |  \n",
+        " |  symmetric_difference_update(...)\n",
+        " |      Update a set with the symmetric difference of itself and another.\n",
+        " |  \n",
+        " |  union(...)\n",
+        " |      Return the union of sets as a new set.\n",
+        " |      \n",
+        " |      (i.e. all elements that are in either set.)\n",
+        " |  \n",
+        " |  update(...)\n",
+        " |      Update a set with the union of itself and others.\n",
+        " |  \n",
+        " |  ----------------------------------------------------------------------\n",
+        " |  Data and other attributes defined here:\n",
+        " |  \n",
+        " |  __hash__ = None\n",
+        " |  \n",
+        " |  __new__ = <built-in method __new__ of type object>\n",
+        " |      T.__new__(S, ...) -> a new object with type S, a subtype of T\n",
+        "\n"
+       ]
+      }
+     ],
+     "prompt_number": 59
+    },
+    {
+     "cell_type": "code",
+     "collapsed": false,
+     "input": [],
+     "language": "python",
+     "metadata": {},
+     "outputs": []
+    }
+   ],
+   "metadata": {}
+  }
+ ]
+}
