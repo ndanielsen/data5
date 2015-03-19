@@ -13,7 +13,7 @@ import csv
 class BurittoFoo(object):
 
 	def __init__(self, file):
-		self._file = with open(file, 'rU') as f
+		self._file = open(file, 'rU')
 
 		self.data = [line for line in csv.reader(self._file, delimiter='\t')]
 
@@ -82,4 +82,4 @@ if __name__ == "__main__":
 	assert 1+1 == 2
 
 	burrito = BurittoFoo('orders.tsv')
-	print burrito.data
+	print burrito.header
