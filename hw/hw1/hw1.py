@@ -10,15 +10,13 @@ Email: nathanjdanielsen@gmail.com
 import csv
 
 
-class BurittoFoo(object):
+class BurritoFoo(object):
 	"""
 	Made to order class to analyze mexico food, costs and ingredients.
 
 	Data Header
 	['order_id', 'quantity', 'item_name', 'choice_description', 'item_price']
 	"""
-
-
 	def __init__(self, file):
 		self._file = open(file, 'rU') # is there a better way to do this?
 
@@ -28,7 +26,9 @@ class BurittoFoo(object):
 
 		self.orders = self.data[1:]
 
-		self.totalcost = sum([float(row[4][1:].strip(' ')) for row in self.orders])
+		self.numtransactions = max([int(row[0]) for row in self.orders])
+
+		self.totalcost =  round(sum([float(row[4][1:].strip(' ')) for row in self.orders]), 2)
 
 	def part1(self):
 		
@@ -51,7 +51,7 @@ class BurittoFoo(object):
 		Hint: examine the data to see if the 'quantity' column is relevant to this calculation
 		Hint: work smarter, not harder! (this can be done in a few lines of code)
 		'''
-		return self.totalcost / len(self.orders)
+		return self.totalcost / self.numtransactions
 
 	def part4(self):
 		'''
@@ -65,7 +65,6 @@ class BurittoFoo(object):
 
 		return set(sodaset)
 
-
 	def part5(self):
 		'''
 		PART 5: calculate the average number of toppings per burrito
@@ -73,7 +72,22 @@ class BurittoFoo(object):
 		Hint: think carefully about the easiest way to count the number of toppings
 		Hint: 'hello there'.count('e')
 		'''
-		pass
+
+		topnum, burnum = 0, 0
+
+		for row in self.orders:
+
+			for burrito, toppings in row[2:3]:
+
+				if "Burrito" in burrito:
+					topnum += sum(toppings[1])
+					burnum += 1
+
+		
+
+
+
+		return topnum, burnum
 
 	def part6(self):
 		'''
@@ -86,6 +100,12 @@ class BurittoFoo(object):
 		pass 
 
 
+	def interestingquestion(self):
+		"""
+		Are vegetarians and chicken eaters less likely to get sour cream and fatty toppings than beef and other meat eaters?
+		"""
+
+		pass
 
 	def answers(self):
 		pass
@@ -97,5 +117,9 @@ if __name__ == "__main__":
 	print "hello"
 	assert 1+1 == 2
 
-	burrito = BurittoFoo('orders.tsv')
-	print burrito.part4()
+
+
+	### Testing a first values of the file 
+	burrito = BurritoFoo('head_orders.tsv')
+	assert burrito.numtransactions == 4
+	print burrito.part3()
