@@ -8,7 +8,7 @@ Email: nathanjdanielsen@gmail.com
 
 """
 import csv
-
+from collections import defaultdict
 
 class BurritoFoo(object):
 	"""
@@ -120,8 +120,8 @@ class BurritoFoo(object):
 		Note: please take the 'quantity' column into account!
 		Advanced: learn how to use 'defaultdict' to simplify your code
 		'''
-		pass 
-
+		# chip_dict = defaultdict 
+		pass
 
 	def interestingquestion(self):
 		"""

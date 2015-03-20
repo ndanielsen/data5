@@ -12,6 +12,15 @@ class TestBurrito(unittest.TestCase):
 		self.assertEquals(1+1, 2)
 
 
+	def test_toppings(self):
+
+		self.assertEquals(self.burrito.toppings("Burrito"), (1, 8, 1) )
+		self.assertEquals(self.burrito.toppings("Chicken"), (2, 11, 3) )
+		self.assertEquals(self.burrito.toppings("chips"), (3, 0, 3))
+		self.assertEquals(self.burrito.toppings('tacos'), (1, 5, 1) )
+
+
+
 	def test_part1andpart2(self):
 
 		self.assertEquals(self.burrito.data[0], self.burrito.header)
@@ -31,10 +40,9 @@ class TestBurrito(unittest.TestCase):
 
 	def test_part5(self):
 
-		self.assertEquals(self.burrito.toppings("Burrito"), (1, 8, 1) )
-		self.assertEquals(self.burrito.toppings("Chicken"), (2, 11, 3) )
-		self.assertEquals(self.burrito.toppings("chips"), (3, 0, 3))
-		self.assertEquals(self.burrito.toppings('tacos'), (1, 5, 1) )
-
 		self.assertEquals(self.burrito.part5("Burrito"), 8)
 		self.assertEquals(self.burrito.part5("Chicken"), 5.5)
+
+	
+
+
