@@ -6,8 +6,6 @@ class TestBurrito(unittest.TestCase):
 	def setUp(self):
 		self.burrito = BurritoFoo('head_orders.tsv')
 	
-
-
 	def test_the_world_is_sane(self):
 		self.assertEquals(1+1, 2)
 
@@ -43,6 +41,9 @@ class TestBurrito(unittest.TestCase):
 		self.assertEquals(self.burrito.part5("Burrito"), 8)
 		self.assertEquals(self.burrito.part5("Chicken"), 5.5)
 
-	
+	def test_part6(self):
 
+		self.assertEquals(self.burrito.part6('Chips'), {'Chips and Fresh Tomato Salsa':1, 'Chips and Tomatillo-Green Chili Salsa':1, 'Side of Chips':1})
+		self.assertEquals(self.burrito.part6('Chicken'), {'Chicken Bowl':3} )
+		self.assertEquals(self.burrito.part6('Steak'), {'Steak Soft Tacos':1, "Steak Burrito":1} )
 

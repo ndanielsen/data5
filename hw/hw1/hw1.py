@@ -29,7 +29,6 @@ class BurritoFoo(object):
 		self.numtransactions = max([int(row[0]) for row in self.orders])
 
 		self.totalcost =  round(sum([float(row[4][1:].strip(' ')) for row in self.orders]), 2)
-
 	
 	def toppings(self, item):
 		""" 
@@ -103,16 +102,11 @@ class BurritoFoo(object):
 		Hint: think carefully about the easiest way to count the number of toppings
 		Hint: 'hello there'.count('e')
 		'''
-
-
-
 		item_count, toppings_count, quantity = self.toppings(item)
-
-
 
 		return float(toppings_count) / item_count
 
-	def part6(self):
+	def part6(self, item ):
 		'''
 		PART 6: create a dictionary in which the keys represent chip orders and
 		  the values represent the total number of orders
@@ -120,29 +114,49 @@ class BurritoFoo(object):
 		Note: please take the 'quantity' column into account!
 		Advanced: learn how to use 'defaultdict' to simplify your code
 		'''
-		# chip_dict = defaultdict 
-		pass
+		item_dict = defaultdict(int)
+
+		# for k in s:
+		# 	item_dict[k] += 1 
+		item = item.lower()
+
+		for row in self.orders: # looks at all orders
+			item_name = row[2]
+			item_name = item_name.lower()
+			item_name = item_name.split()  
+			#print row 
+			if item in item_name:
+				item_dict[row[2]] += int(row[1])
+
+		return item_dict
 
 	def interestingquestion(self):
 		"""
 		Are vegetarians and chicken eaters less likely to get sour cream and fatty toppings than beef and other meat eaters?
+		
+		Do I feel like this now?
 		"""
 
 		pass
 
 	def answers(self):
-		pass
 
+		print "Answers to HW 1"
+		print "Parts 1 and 2 are too verbose to print here"
+		print '\n'
+		print "Average price per order is $%s" % self.part3()
+		print '\n'
+		print "These are the sodas served: %s" % self.part4()
+		print '\n'
+		print "Average toppings per burrito is %s" % self.part5("Burrito")
+		print '\n'
+		print "Chips Orders and Quantity of Order Type"
+		for key, value in self.part6("Chips").items():
+			print key,":", value
 
 
 
 if __name__ == "__main__":
-	print "hello"
-	assert 1+1 == 2
-
-
-
-	### Testing a first values of the file 
-	burrito = BurritoFoo('head_orders.tsv')
-	assert burrito.numtransactions == 4
-	print burrito.part5("Tacos")
+ 
+	burrito = BurritoFoo('orders.tsv')
+	print burrito.answers()
