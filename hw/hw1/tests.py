@@ -1,3 +1,5 @@
+#!/usr/local/bin/python
+
 import unittest
 from hw1 import BurritoFoo
 
@@ -34,7 +36,7 @@ class TestBurrito(unittest.TestCase):
 
 	def test_part4(self):
 		""" Test isn't useful with testing data set """
-		self.assertEquals(self.burrito.part4(), [])
+		self.assertEquals(self.burrito.part4(["Canned Soda", "Canned Soft Drink"]), set([]))
 
 	def test_part5(self):
 

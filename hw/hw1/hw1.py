@@ -1,3 +1,6 @@
+#!/usr/local/bin/python
+
+
 """
 HW1
 
@@ -9,6 +12,9 @@ Email: nathanjdanielsen@gmail.com
 """
 import csv
 from collections import defaultdict
+import string
+
+
 
 class BurritoFoo(object):
 	"""
@@ -83,17 +89,18 @@ class BurritoFoo(object):
 		'''
 		return self.totalcost / self.numtransactions
 
-	def part4(self):
+	def part4(self, args):
 		'''
 		PART 4: create a list (or set) of all unique sodas and soft drinks that they sell
 		Note: just look for 'Canned Soda' and 'Canned Soft Drink', and ignore other drinks like 'Izze'
 		'''
-		can = "Canned Soda"
-		soft = "Canned Soft Drink"
+		unique_elems = set()
+		for item in args:
+		
+			elems = [order[3].strip('[]') for order in self.orders if order[2] == item]
+			unique_elems.update(elems)
 
-		sodaset = set([soda[3].strip('[]') for soda in self.orders if soda[2] == can or soda[2] == soft])
-
-		return list(sodaset)
+		return unique_elems
 
 	def part5(self, item):
 		'''
@@ -130,14 +137,21 @@ class BurritoFoo(object):
 
 		return item_dict
 
-	def interestingquestion(self):
+	def calories(self):
 		"""
 		Are vegetarians and chicken eaters less likely to get sour cream and fatty toppings than beef and other meat eaters?
 		
 		Do I feel like this now?
 		"""
+		order = self.orders[4]
+		
+		order =  order[3]
+		order = order.split(',')
+		print [item.strip('[] ') for item in order]
+		# order = string.strip(order, '[]')
+		
 
-		pass
+
 
 	def answers(self):
 
@@ -146,7 +160,7 @@ class BurritoFoo(object):
 		print '\n'
 		print "Average price per order is $%s" % self.part3()
 		print '\n'
-		print "These are the sodas served: %s" % self.part4()
+		print "These are the sodas served: %s" % self.part4(["Canned Soda", "Canned Soft Drink"])
 		print '\n'
 		print "Average toppings per burrito is %s" % self.part5("Burrito")
 		print '\n'
@@ -159,4 +173,4 @@ class BurritoFoo(object):
 if __name__ == "__main__":
  
 	burrito = BurritoFoo('orders.tsv')
-	print burrito.answers()
+	print burrito.part4(["Canned Soda", "Canned Soft Drink"])
