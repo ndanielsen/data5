@@ -23,12 +23,43 @@ class BurritoFoo(object):
 		self.data = [line for line in csv.reader(self._file, delimiter='\t')]
 
 		self.header = self.data[0]
-
+ 
 		self.orders = self.data[1:]
 
 		self.numtransactions = max([int(row[0]) for row in self.orders])
 
 		self.totalcost =  round(sum([float(row[4][1:].strip(' ')) for row in self.orders]), 2)
+
+	
+	def toppings(self, item):
+		""" 
+		Takes a single word 'item' noun 
+
+		Returns the number of times the noun has shown up in order history and also the numbers of toppings 
+
+		"""
+		item = item.lower()
+		item_count, toppings_count, quantity = 0, 0, 0 
+
+		for row in self.orders: # looks at all orders
+			item_name = row[2]
+			item_name = item_name.lower()
+			item_name = item_name.split()  
+
+
+			if item in item_name:
+
+				item_count += 1
+				quantity += int(row[1])
+
+				if row[3] != "NULL": ### Added because chips are NULL value and was making calculation problems with +1 comma correction
+
+					toppings_count += row[3].count(',') + 1 # counting the number of commas in choice description # and assuming salsa is a topping
+
+			else:
+				pass
+
+		return item_count, toppings_count, quantity
 
 	def part1(self):
 		
@@ -61,11 +92,11 @@ class BurritoFoo(object):
 		can = "Canned Soda"
 		soft = "Canned Soft Drink"
 
-		sodaset = [soda[3].strip('[]') for soda in self.orders if soda[2] == can or soda[2] == soft]
+		sodaset = set([soda[3].strip('[]') for soda in self.orders if soda[2] == can or soda[2] == soft])
 
-		return set(sodaset)
+		return list(sodaset)
 
-	def part5(self):
+	def part5(self, item):
 		'''
 		PART 5: calculate the average number of toppings per burrito
 		Note: let's ignore the 'quantity' column to simplify this task
@@ -73,21 +104,13 @@ class BurritoFoo(object):
 		Hint: 'hello there'.count('e')
 		'''
 
-		topnum, burnum = 0, 0
 
-		for row in self.orders:
 
-			for burrito, toppings in row[2:3]:
-
-				if "Burrito" in burrito:
-					topnum += sum(toppings[1])
-					burnum += 1
-
-		
+		item_count, toppings_count, quantity = self.toppings(item)
 
 
 
-		return topnum, burnum
+		return float(toppings_count) / item_count
 
 	def part6(self):
 		'''
@@ -122,4 +145,4 @@ if __name__ == "__main__":
 	### Testing a first values of the file 
 	burrito = BurritoFoo('head_orders.tsv')
 	assert burrito.numtransactions == 4
-	print burrito.part3()
+	print burrito.part5("Tacos")

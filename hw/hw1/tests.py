@@ -23,3 +23,18 @@ class TestBurrito(unittest.TestCase):
 		self.assertEquals(self.burrito.totalcost, 62.21)
 		self.assertEquals(self.burrito.numtransactions, 4)
 		self.assertEquals(self.burrito.part3(), (62.21/4))
+
+
+	def test_part4(self):
+		""" Test isn't useful with testing data set """
+		self.assertEquals(self.burrito.part4(), [])
+
+	def test_part5(self):
+
+		self.assertEquals(self.burrito.toppings("Burrito"), (1, 8, 1) )
+		self.assertEquals(self.burrito.toppings("Chicken"), (2, 11, 3) )
+		self.assertEquals(self.burrito.toppings("chips"), (3, 0, 3))
+		self.assertEquals(self.burrito.toppings('tacos'), (1, 5, 1) )
+
+		self.assertEquals(self.burrito.part5("Burrito"), 8)
+		self.assertEquals(self.burrito.part5("Chicken"), 5.5)
