@@ -157,31 +157,34 @@ class BurritoFoo(object):
 
 		return item_dict
 
-	def calories(self):
+	@staticmethod
+	def extraFatScore(self, orders):
+		"""
+		Counts the extra fatty toppings in a set of orders and returns a score of total toppings
+		"""		
+		unhealthy = ['cheese', 'guacamole', 'sour cream']
+
+		total_score = 0
+
+		for order in orders:
+			toppings = self.description_cleaner(order)
+			score = len([side for side in unhealthy if side in toppings])
+			total_score += score
+
+
+		return scored_items
+
+	def bonus(self):
 		"""
 		Are vegetarians and chicken eaters less likely to get sour cream and fatty toppings than beef and other meat eaters?
 		
 		Do I feel like this now?
-		"""
-		
-		unhealthy = ['cheese', 'guacamole', 'sour cream']
+		"""	
+		# define the the type of protein orders to be filtered
+		# score each type fby the extraFatScore
+		# compare the average per order by the type 
 
-		scored_items = []
-
-		for order in self.orders:
-
-			toppings = self.description_cleaner(order)
-
-			score = len([side for side in unhealthy if side in toppings])
-
-			scored_items.append((order[2], score))
-
-
-		return scored_items
-		# 			count += 1
-		# return order, count		
-
-		
+		pass
 
 
 
@@ -207,4 +210,4 @@ if __name__ == "__main__":
 	burrito = BurritoFoo('head_orders.tsv')
 	# print burrito.description_cleaner(["4",	"1",	"Steak Burrito",	"[Tomatillo Red Chili Salsa, [Fajita Vegetables, Black Beans, Pinto Beans, Cheese, Sour Cream, Guacamole, Lettuce]]",	"$11.75" ])
 	print burrito.toppings("Steak")
-	# print burrito.calories()
+	# print burrito.fat_score()
