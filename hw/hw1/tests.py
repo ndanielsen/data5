@@ -35,8 +35,9 @@ class TestBurrito(unittest.TestCase):
 
 
 	def test_part4(self):
-		""" Test isn't useful with testing data set """
-		self.assertEquals(self.burrito.part4(["Canned Soda", "Canned Soft Drink"]), set([]))
+		self.assertEquals(self.burrito.part4(["Canned Soda", "Canned Soft Drink"]), [] )
+		self.assertEquals(self.burrito.part4(["Steak Burrito"]), ['pinto beans', 'cheese', 'tomatillo red chili salsa', 'guacamole', 'fajita vegetables', 'lettuce', 'black beans', 'sour cream']
+)
 
 	def test_part5(self):
 

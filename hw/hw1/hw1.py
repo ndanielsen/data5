@@ -36,6 +36,17 @@ class BurritoFoo(object):
 
 		self.totalcost =  round(sum([float(row[4][1:].strip(' ')) for row in self.orders]), 2)
 	
+	@staticmethod
+	def description_cleaner(order):
+		order =  order[3]
+		
+		if order == "NULL":
+			return []
+		else:
+			order = order.split(',')
+			cleaned = [item.strip('[] ').lower() for item in order]
+			return cleaned
+
 	def toppings(self, item):
 		""" 
 		Takes a single word 'item' noun 
@@ -59,7 +70,7 @@ class BurritoFoo(object):
 
 				if row[3] != "NULL": ### Added because chips are NULL value and was making calculation problems with +1 comma correction
 
-					toppings_count += row[3].count(',') + 1 # counting the number of commas in choice description # and assuming salsa is a topping
+					toppings_count += len(self.description_cleaner(row))
 
 			else:
 				pass
@@ -89,18 +100,20 @@ class BurritoFoo(object):
 		'''
 		return self.totalcost / self.numtransactions
 
-	def part4(self, args):
+	def part4(self, items):
 		'''
 		PART 4: create a list (or set) of all unique sodas and soft drinks that they sell
 		Note: just look for 'Canned Soda' and 'Canned Soft Drink', and ignore other drinks like 'Izze'
 		'''
 		unique_elems = set()
-		for item in args:
-		
-			elems = [order[3].strip('[]') for order in self.orders if order[2] == item]
-			unique_elems.update(elems)
+		for order in self.orders: # going through all the order data
+			for item in items:
+				if item == order[2]:
+					description = self.description_cleaner(order)
+					unique_elems.update(description)
 
-		return unique_elems
+		unique = list(unique_elems)
+		return unique
 
 	def part5(self, item):
 		'''
@@ -145,9 +158,7 @@ class BurritoFoo(object):
 		"""
 		order = self.orders[4]
 		
-		order =  order[3]
-		order = order.split(',')
-		print [item.strip('[] ') for item in order]
+		description_cleaner(order)
 		# order = string.strip(order, '[]')
 		
 
@@ -172,5 +183,6 @@ class BurritoFoo(object):
 
 if __name__ == "__main__":
  
-	burrito = BurritoFoo('orders.tsv')
-	print burrito.part4(["Canned Soda", "Canned Soft Drink"])
+	burrito = BurritoFoo('head_orders.tsv')
+	# print burrito.description_cleaner(["4",	"1",	"Steak Burrito",	"[Tomatillo Red Chili Salsa, [Fajita Vegetables, Black Beans, Pinto Beans, Cheese, Sour Cream, Guacamole, Lettuce]]",	"$11.75" ])
+	print burrito.part4(["Steak Burrito"])
