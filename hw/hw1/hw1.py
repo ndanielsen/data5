@@ -47,34 +47,41 @@ class BurritoFoo(object):
 			cleaned = [item.strip('[] ').lower() for item in order]
 			return cleaned
 
-	def toppings(self, item):
-		""" 
-		Takes a single word 'item' noun 
+	def item_filter(self, item):
 
-		Returns the number of times the noun has shown up in order history and also the numbers of toppings 
+		filtered_orders = []
 
-		"""
 		item = item.lower()
-		item_count, toppings_count, quantity = 0, 0, 0 
-
+		
 		for row in self.orders: # looks at all orders
 			item_name = row[2]
 			item_name = item_name.lower()
 			item_name = item_name.split()  
 
-
 			if item in item_name:
+				filtered_orders.append(row)
 
-				item_count += 1
-				quantity += int(row[1])
+		return filtered_orders
 
-				if row[3] != "NULL": ### Added because chips are NULL value and was making calculation problems with +1 comma correction
 
-					toppings_count += len(self.description_cleaner(row))
+	def toppings(self, item):
+		""" 
+		Takes a single word 'item' noun 
 
-			else:
-				pass
+		Returns the number of times the noun has shown up in order history, numbers of toppings and quantit of orders 
 
+		"""
+		item_count, toppings_count, quantity = 0, 0, 0 
+  
+		filtered_orders = self.item_filter(item)
+		
+		item_count = len(filtered_orders)
+
+		for row in filtered_orders:
+			quantity += int(row[1])
+			toppings_count += len(self.description_cleaner(row))
+
+		
 		return item_count, toppings_count, quantity
 
 	def part1(self):
@@ -156,10 +163,24 @@ class BurritoFoo(object):
 		
 		Do I feel like this now?
 		"""
-		order = self.orders[4]
 		
-		description_cleaner(order)
-		# order = string.strip(order, '[]')
+		unhealthy = ['cheese', 'guacamole', 'sour cream']
+
+		scored_items = []
+
+		for order in self.orders:
+
+			toppings = self.description_cleaner(order)
+
+			score = len([side for side in unhealthy if side in toppings])
+
+			scored_items.append((order[2], score))
+
+
+		return scored_items
+		# 			count += 1
+		# return order, count		
+
 		
 
 
@@ -185,4 +206,5 @@ if __name__ == "__main__":
  
 	burrito = BurritoFoo('head_orders.tsv')
 	# print burrito.description_cleaner(["4",	"1",	"Steak Burrito",	"[Tomatillo Red Chili Salsa, [Fajita Vegetables, Black Beans, Pinto Beans, Cheese, Sour Cream, Guacamole, Lettuce]]",	"$11.75" ])
-	print burrito.part4(["Steak Burrito"])
+	print burrito.toppings("Steak")
+	# print burrito.calories()
