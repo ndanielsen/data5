@@ -166,57 +166,47 @@ class BurritoFoo(object):
 
 		total_score = 0
 
-		if len(orders) == 5 and type(orders[3]) == str: ### for evaluating a single oder for fattiness and confirming 3rd element is string, not another order
+		if len(orders) == 5 and type(orders[3]) == str: ### for evaluating a single order and confirming 3rd element is string, not another order
 			order = orders
 			fatty_sides = [side for side in unhealthy if side in self.description_cleaner(order)]
 			total_score += len(fatty_sides)	
 
 		else :
 			for order in orders:
-				print order
 				score = len([side for side in unhealthy if side in self.description_cleaner(order)])
 				total_score += score
 
 		return total_score
 
-	def bonus(self):
+	def bonus(self, query):
 		"""
-		Are vegetarians and chicken eaters less likely to get sour cream and fatty toppings than beef and other meat eaters?
+		Quesiton: Are vegetarians and chicken eaters less likely to get sour cream and fatty toppings than beef and other meat eaters?
 		
-		Do I feel like this now?
+		Funciton takes in a single string or list of strings for proteins in an order, and returns the average number of the fatty toppings [1-3]   
 		"""	
 
-		steak_orders = self.item_filter('Steak')
-
-		chicken_orders = self.item_filter('Chicken')
-
-		veggie_orders = self.item_filter("Veggie")
-
-		barbacoa_orders = self.item_filter("Barbacoa")
-
-
-		steak_fatty = reduce(lambda x,y : x + y, map(self.extraFatScore, steak_orders)) 
-
-		chicken_fatty = reduce(lambda x,y : x + y, map(self.extraFatScore, chicken_orders)) 
-
-		veggie_fatty = reduce(lambda x,y : x + y, map(self.extraFatScore, veggie_orders)) 
-
-		barbacoa_fatty = reduce(lambda x,y : x + y, map(self.extraFatScore, barbacoa_orders)) 
-
-
-		average_Steak = float(steak_fatty) / len(steak_orders)
-
-		average_Chicken = float(chicken_fatty) / len(chicken_orders)
-
-		average_Veggie = float(veggie_fatty) / len(veggie_orders)
-
-		average_Barbacoa = float(barbacoa_fatty) / len(barbacoa_orders)
-
-
-		# print veggie_orders
-
-		return average_Steak, average_Chicken, average_Veggie, average_Barbacoa
+		# query = ['Steak', 'Chicken', 'Veggie', 'Barbacoa', 'Carnitas']
 		
+		def average_fattyscore(protein):
+				
+				try:
+					filtered_orders = self.item_filter(protein)
+					fatty_score = reduce(lambda x,y : x + y, map(self.extraFatScore, filtered_orders))
+					averaged_score = float(fatty_score) / len(filtered_orders)
+
+					return protein, averaged_score
+			
+				except TypeError:
+			
+					return protein, None
+
+		if type(query) == list:
+
+			return map(average_fattyscore, query)
+
+		else:
+
+			return	average_fattyscore(query)			
 
 
 
@@ -239,7 +229,7 @@ class BurritoFoo(object):
 
 if __name__ == "__main__":
  
-	burrito = BurritoFoo('orders.tsv')
+	burrito = BurritoFoo('head_orders.tsv')
 	# print burrito.description_cleaner(burrito.orders[8])
 	# # print burrito.toppings("Steak")
-	print burrito.bonus()
+	print burrito.bonus(['Steak', 'Chicken', 'Pork'])

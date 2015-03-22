@@ -75,3 +75,8 @@ class TestBurrito(unittest.TestCase):
 		self.assertEquals(len(self.burrito.item_filter("Veggie")), 0)
 		self.assertEquals(len(self.burrito.item_filter("Steak")), 2)
 		self.assertEquals(len(self.burrito.item_filter("Chicken")), 2)
+		self.assertEquals(self.burrito.bonus("Steak"), ('Steak', 2.5))
+		self.assertEquals(self.burrito.bonus("Chicken"), ('Chicken', 2.5))
+		self.assertEquals(self.burrito.bonus("Chips"), ("Chips", 0.0))
+		self.assertEquals(self.burrito.bonus(['Steak', 'Chicken', 'Pork']), [('Steak', 2.5), ('Chicken', 2.5), ('Pork', None)])
+
