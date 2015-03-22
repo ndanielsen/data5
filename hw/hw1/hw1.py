@@ -194,7 +194,7 @@ class BurritoFoo(object):
 					fatty_score = reduce(lambda x,y : x + y, map(self.extraFatScore, filtered_orders))
 					averaged_score = float(fatty_score) / len(filtered_orders)
 
-					return protein, averaged_score
+					return protein, round(averaged_score, 2)
 			
 				except TypeError:
 			
@@ -225,11 +225,20 @@ class BurritoFoo(object):
 		for key, value in self.part6("Chips").items():
 			print key,":", value
 
+		print '\n'
+		print "My self-defined bonus question was:"
+		print "Which types of proteins(Steak, Chicken, etc) have more fatty toppings like guacamole, sour cream and cheese?"
+		print "Veggie as the 'main' topping was my control."
+		results = self.bonus(['Steak', 'Chicken', 'Carnitas', 'Veggie', 'Barbacoa'])
+		print "The results are that:"
+		for protein, average in results:
+			print protein, "has", average, "fatty toppings on average"
 
+		print "My conclusion is considering the large same size that steak and carnitas orders indulge a little more on fatty toppings. Chicken eaters are less likely to order fatty toppings and are probably watching their waistlines"
 
 if __name__ == "__main__":
  
-	burrito = BurritoFoo('head_orders.tsv')
-	# print burrito.description_cleaner(burrito.orders[8])
-	# # print burrito.toppings("Steak")
-	print burrito.bonus(['Steak', 'Chicken', 'Pork'])
+	burrito = BurritoFoo('orders.tsv')
+
+	print burrito.answers()
+
