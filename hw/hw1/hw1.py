@@ -157,7 +157,7 @@ class BurritoFoo(object):
 
 		return item_dict
 
-	@staticmethod
+
 	def extraFatScore(self, orders):
 		"""
 		Counts the extra fatty toppings in a set of orders and returns a score of total toppings
@@ -166,13 +166,19 @@ class BurritoFoo(object):
 
 		total_score = 0
 
-		for order in orders:
-			toppings = self.description_cleaner(order)
-			score = len([side for side in unhealthy if side in toppings])
-			total_score += score
+		if len(orders) == 5 and type(orders[3]) == str: ### for evaluating a single oder for fattiness and confirming 3rd element is string, not another order
+			order = orders
+			fatty_sides = [side for side in unhealthy if side in self.description_cleaner(order)]
+			total_score += len(fatty_sides)	
+
+		else :
+			for order in orders:
+				print order
+				score = len([side for side in unhealthy if side in self.description_cleaner(order)])
+				total_score += score
 
 
-		return scored_items
+		return total_score
 
 	def bonus(self):
 		"""
@@ -183,6 +189,9 @@ class BurritoFoo(object):
 		# define the the type of protein orders to be filtered
 		# score each type fby the extraFatScore
 		# compare the average per order by the type 
+
+
+
 
 		pass
 
@@ -208,6 +217,6 @@ class BurritoFoo(object):
 if __name__ == "__main__":
  
 	burrito = BurritoFoo('head_orders.tsv')
-	# print burrito.description_cleaner(["4",	"1",	"Steak Burrito",	"[Tomatillo Red Chili Salsa, [Fajita Vegetables, Black Beans, Pinto Beans, Cheese, Sour Cream, Guacamole, Lettuce]]",	"$11.75" ])
-	print burrito.toppings("Steak")
-	# print burrito.fat_score()
+	# print burrito.description_cleaner(burrito.orders[8])
+	# # print burrito.toppings("Steak")
+	print burrito.extraFatScore(burrito.orders[8])

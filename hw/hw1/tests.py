@@ -7,6 +7,7 @@ class TestBurrito(unittest.TestCase):
 
 	def setUp(self):
 		self.burrito = BurritoFoo('head_orders.tsv')
+		self.orders = self.burrito.orders
 	
 	def test_the_world_is_sane(self):
 		self.assertEquals(1+1, 2)
@@ -19,7 +20,27 @@ class TestBurrito(unittest.TestCase):
 		self.assertEquals(self.burrito.toppings("chips"), (3, 0, 3))
 		self.assertEquals(self.burrito.toppings('tacos'), (1, 5, 1) )
 
+	def test_description_cleaner(self):
 
+		self.assertEquals(self.burrito.description_cleaner(self.orders[0]), [])
+		self.assertEquals(self.burrito.description_cleaner(self.orders[1]), ['clementine'])
+		self.assertEquals(self.burrito.description_cleaner(self.orders[2]), ['apple'])
+		self.assertEquals(self.burrito.description_cleaner(self.orders[3]), [])
+		self.assertEquals(self.burrito.description_cleaner(self.orders[4]), ['tomatillo-red chili salsa (hot)', 'black beans', 'rice', 'cheese', 'sour cream'])
+		self.assertEquals(self.burrito.description_cleaner(self.orders[5]), ['fresh tomato salsa (mild)', 'rice', 'cheese', 'sour cream', 'guacamole', 'lettuce'])
+		self.assertEquals(self.burrito.description_cleaner(self.orders[6]), [])
+		self.assertEquals(self.burrito.description_cleaner(self.orders[7]), ['tomatillo red chili salsa', 'fajita vegetables', 'black beans', 'pinto beans', 'cheese', 'sour cream', 'guacamole', 'lettuce'])
+		self.assertEquals(self.burrito.description_cleaner(self.orders[8]), ['tomatillo green chili salsa', 'pinto beans', 'cheese', 'sour cream', 'lettuce'])	
+
+	def test_item_filter(self):
+		self.assertEquals(len(self.burrito.item_filter('Steak')), 2 ) 
+		self.assertEquals(len(self.burrito.item_filter('Bowl')), 2 ) 
+		self.assertEquals(len(self.burrito.item_filter('Izze')), 1 ) 
+		self.assertEquals(len(self.burrito.item_filter('Veggie')), 0 )
+
+	def test_extra_fat_score(self):
+		self.assertEquals(self.burrito.extraFatScore(self.orders), 10)
+		self.assertEquals(self.burrito.extraFatScore(self.orders[6]), 0)
 
 	def test_part1andpart2(self):
 
