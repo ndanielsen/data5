@@ -27,6 +27,7 @@ PART6 : Chips Orders and Quantity of Order Type
 BONUS : My self-defined question was: 
 
 Which types of proteins(Steak, Chicken, etc) have more fatty toppings defined as guacamole, sour cream and cheese?
+
 Veggie as the 'main' topping was my control. 
 
 The results are: 
@@ -38,5 +39,7 @@ The results are:
 	Barbacoa orders have 1.76 average fatty toppings
 
 
-My conclusion is that people who order steak and carnitas dishes indulge a little more on fatty toppings. Chicken eaters are less likely to order fatty toppings and are probably watching their waistlines
+My conclusion is that people who order steak and carnitas dishes indulge a little more on fatty toppings. Chicken eaters are less likely to order fatty toppings and are probably watching their waistlines. 
+
+Bene note: Too lazy to do a true statistical analysis with only built in python tools.
 None

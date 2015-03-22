@@ -231,7 +231,7 @@ class BurritoFoo(object):
 		print '\n'
 
 		print "BONUS : My self-defined question was: \n"
-		print "Which types of proteins(Steak, Chicken, etc) have more fatty toppings defined as guacamole, sour cream and cheese?"
+		print "Which types of proteins(Steak, Chicken, etc) have more fatty toppings defined as guacamole, sour cream and cheese?\n"
 		print "Veggie as the 'main' topping was my control. \n"
 
 		results = self.bonus(['Steak', 'Chicken', 'Carnitas', 'Veggie', 'Barbacoa'])
@@ -239,7 +239,9 @@ class BurritoFoo(object):
 		for protein, average in results:
 			print '\t', protein, "orders have", average, "average fatty toppings"
 		print '\n'
-		print "My conclusion is that people who order steak and carnitas dishes indulge a little more on fatty toppings. Chicken eaters are less likely to order fatty toppings and are probably watching their waistlines"
+		print "My conclusion is that people who order steak and carnitas dishes indulge a little more on fatty toppings. Chicken eaters are less likely to order fatty toppings and are probably watching their waistlines. \n"
+
+		print "Bene note: Too lazy to do a true statistical analysis with only built in python tools."
 
 if __name__ == "__main__":
  
