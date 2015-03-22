@@ -177,7 +177,6 @@ class BurritoFoo(object):
 				score = len([side for side in unhealthy if side in self.description_cleaner(order)])
 				total_score += score
 
-
 		return total_score
 
 	def bonus(self):
@@ -186,14 +185,38 @@ class BurritoFoo(object):
 		
 		Do I feel like this now?
 		"""	
-		# define the the type of protein orders to be filtered
-		# score each type fby the extraFatScore
-		# compare the average per order by the type 
+
+		steak_orders = self.item_filter('Steak')
+
+		chicken_orders = self.item_filter('Chicken')
+
+		veggie_orders = self.item_filter("Veggie")
+
+		barbacoa_orders = self.item_filter("Barbacoa")
 
 
+		steak_fatty = reduce(lambda x,y : x + y, map(self.extraFatScore, steak_orders)) 
+
+		chicken_fatty = reduce(lambda x,y : x + y, map(self.extraFatScore, chicken_orders)) 
+
+		veggie_fatty = reduce(lambda x,y : x + y, map(self.extraFatScore, veggie_orders)) 
+
+		barbacoa_fatty = reduce(lambda x,y : x + y, map(self.extraFatScore, barbacoa_orders)) 
 
 
-		pass
+		average_Steak = float(steak_fatty) / len(steak_orders)
+
+		average_Chicken = float(chicken_fatty) / len(chicken_orders)
+
+		average_Veggie = float(veggie_fatty) / len(veggie_orders)
+
+		average_Barbacoa = float(barbacoa_fatty) / len(barbacoa_orders)
+
+
+		# print veggie_orders
+
+		return average_Steak, average_Chicken, average_Veggie, average_Barbacoa
+		
 
 
 
@@ -216,7 +239,7 @@ class BurritoFoo(object):
 
 if __name__ == "__main__":
  
-	burrito = BurritoFoo('head_orders.tsv')
+	burrito = BurritoFoo('orders.tsv')
 	# print burrito.description_cleaner(burrito.orders[8])
 	# # print burrito.toppings("Steak")
-	print burrito.extraFatScore(burrito.orders[8])
+	print burrito.bonus()

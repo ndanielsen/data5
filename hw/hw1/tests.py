@@ -71,3 +71,7 @@ class TestBurrito(unittest.TestCase):
 		self.assertEquals(self.burrito.part6('Chicken'), {'Chicken Bowl':3} )
 		self.assertEquals(self.burrito.part6('Steak'), {'Steak Soft Tacos':1, "Steak Burrito":1} )
 
+	def test_bonus(self):
+		self.assertEquals(len(self.burrito.item_filter("Veggie")), 0)
+		self.assertEquals(len(self.burrito.item_filter("Steak")), 2)
+		self.assertEquals(len(self.burrito.item_filter("Chicken")), 2)
