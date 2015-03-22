@@ -212,29 +212,34 @@ class BurritoFoo(object):
 
 	def answers(self):
 
-		print "Answers to HW 1"
-		print "Parts 1 and 2 are too verbose to print here"
+		print "Answers to HW 1 for DAT5" 
+		print "by Nathan Danielsen"
 		print '\n'
-		print "Average price per order is $%s" % self.part3()
-		print '\n'
-		print "These are the sodas served: %s" % self.part4(["Canned Soda", "Canned Soft Drink"])
-		print '\n'
-		print "Average toppings per burrito is %s" % self.part5("Burrito")
-		print '\n'
-		print "Chips Orders and Quantity of Order Type"
+		
+		print "Parts 1 and 2 are too verbose to print here \n"
+		
+		print "PART3 : Average price per order is $%s \n" % self.part3()
+		
+		print "PART4 : These are the sodas served: %s \n" % self.part4(["Canned Soda", "Canned Soft Drink"])
+		
+		print "PART5 : Average toppings per burrito is %s \n" % self.part5("Burrito")
+		
+		print "PART6 : Chips Orders and Quantity of Order Type"
 		for key, value in self.part6("Chips").items():
-			print key,":", value
+			print '\t', key,":", value
 
 		print '\n'
-		print "My self-defined bonus question was:"
-		print "Which types of proteins(Steak, Chicken, etc) have more fatty toppings like guacamole, sour cream and cheese?"
-		print "Veggie as the 'main' topping was my control."
-		results = self.bonus(['Steak', 'Chicken', 'Carnitas', 'Veggie', 'Barbacoa'])
-		print "The results are that:"
-		for protein, average in results:
-			print protein, "has", average, "fatty toppings on average"
 
-		print "My conclusion is considering the large same size that steak and carnitas orders indulge a little more on fatty toppings. Chicken eaters are less likely to order fatty toppings and are probably watching their waistlines"
+		print "BONUS : My self-defined question was: \n"
+		print "Which types of proteins(Steak, Chicken, etc) have more fatty toppings defined as guacamole, sour cream and cheese?"
+		print "Veggie as the 'main' topping was my control. \n"
+
+		results = self.bonus(['Steak', 'Chicken', 'Carnitas', 'Veggie', 'Barbacoa'])
+		print "The results are: \n"
+		for protein, average in results:
+			print '\t', protein, "orders have", average, "average fatty toppings"
+		print '\n'
+		print "My conclusion is that people who order steak and carnitas dishes indulge a little more on fatty toppings. Chicken eaters are less likely to order fatty toppings and are probably watching their waistlines"
 
 if __name__ == "__main__":
  

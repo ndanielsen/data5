@@ -1,0 +1,42 @@
+Answers to HW 1 for DAT5
+by Nathan Danielsen
+
+
+Parts 1 and 2 are too verbose to print here 
+
+PART3 : Average price per order is $18.8114285714 
+
+PART4 : These are the sodas served: ['sprite', 'coke', 'lemonade', 'coca cola', 'diet dr. pepper', 'diet coke', 'dr. pepper', 'nestea', 'mountain dew'] 
+
+PART5 : Average toppings per burrito is 5.39505119454 
+
+PART6 : Chips Orders and Quantity of Order Type
+	Chips and Roasted Chili-Corn Salsa : 18
+	Chips and Tomatillo-Red Chili Salsa : 25
+	Chips and Mild Fresh Tomato Salsa : 1
+	Chips and Guacamole : 506
+	Chips and Fresh Tomato Salsa : 130
+	Chips and Tomatillo Red Chili Salsa : 50
+	Chips and Tomatillo-Green Chili Salsa : 33
+	Side of Chips : 110
+	Chips and Roasted Chili Corn Salsa : 23
+	Chips : 230
+	Chips and Tomatillo Green Chili Salsa : 45
+
+
+BONUS : My self-defined question was: 
+
+Which types of proteins(Steak, Chicken, etc) have more fatty toppings defined as guacamole, sour cream and cheese?
+Veggie as the 'main' topping was my control. 
+
+The results are: 
+
+	Steak orders have 1.84 average fatty toppings
+	Chicken orders have 1.7 average fatty toppings
+	Carnitas orders have 1.83 average fatty toppings
+	Veggie orders have 1.75 average fatty toppings
+	Barbacoa orders have 1.76 average fatty toppings
+
+
+My conclusion is that people who order steak and carnitas dishes indulge a little more on fatty toppings. Chicken eaters are less likely to order fatty toppings and are probably watching their waistlines
+None
