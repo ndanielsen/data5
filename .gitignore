@@ -1,2 +1,6 @@
 *.pyc
+<<<<<<< HEAD
 .ipynb_checkpoints/
+=======
+*.zip
+>>>>>>> new

@@ -1,0 +1,10 @@
+Homework
+
+For the following homework, please turn in the code used to generate the answer as well as the answer.
+Using the command line, look at the file SMSSpamCollection.txt (Source: https://archive.ics.uci.edu/ml/machine-learning-databases/00228/smsspamcollection.zip) in the data directory. It contains text messages that are labeled as spam or ham (the opposite of spam). Answer the following questions:
+How many text messages are there?
+What is the average number of words per text? What is the average number of characters per text?
+How many messages are spam? How many are ham?
+Is there a difference between the number of words per text and characters per text in messages that are spam vs. those that are ham? What are these numbers?
+Bonus: If you feel that this is too easy, research the awk command to learn how to calculate and print out these averages in the console.
+Separate the spam and ham messages into files "spam_messages.txt" and "ham_messages.txt".
