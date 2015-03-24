@@ -4,9 +4,9 @@
 
 # Other things to do
 
-* Probably learn a bit more markdown '''(?!? irony ?!?)'''
+* Probably learn a bit more markdown `(?!? irony ?!?)`
 * Python Magic Methods
-* Keep working on Django blog []
+* Keep working on Django blog
 
 
 Course Github Page
