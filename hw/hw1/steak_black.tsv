@@ -1,0 +1,149 @@
+head_orders.tsv:4	1	Steak Burrito	[Tomatillo Red Chili Salsa, [Fajita Vegetables, Black Beans, Pinto Beans, Cheese, Sour Cream, Guacamole, Lettuce]]	$11.75 
+orders.tsv:4	1	Steak Burrito	[Tomatillo Red Chili Salsa, [Fajita Vegetables, Black Beans, Pinto Beans, Cheese, Sour Cream, Guacamole, Lettuce]]	$11.75 
+orders.tsv:5	1	Steak Burrito	[Fresh Tomato Salsa, [Rice, Black Beans, Pinto Beans, Cheese, Sour Cream, Lettuce]]	$9.25 
+orders.tsv:16	1	Steak Burrito	[[Roasted Chili Corn Salsa (Medium), Fresh Tomato Salsa (Mild)], [Rice, Black Beans, Sour Cream]]	$8.99 
+orders.tsv:22	1	Steak Burrito	[[Fresh Tomato Salsa (Mild), Roasted Chili Corn Salsa (Medium), Tomatillo-Red Chili Salsa (Hot)], [Black Beans, Rice, Sour Cream]]	$8.99 
+orders.tsv:29	1	Steak Burrito	[Tomatillo-Red Chili Salsa (Hot), [Black Beans, Rice, Fajita Veggies, Cheese, Sour Cream, Lettuce]]	$8.99 
+orders.tsv:31	1	Steak Burrito	[Roasted Chili Corn Salsa (Medium), [Rice, Black Beans, Sour Cream]]	$8.99 
+orders.tsv:32	1	Steak Burrito	[Tomatillo-Red Chili Salsa (Hot), [Black Beans, Rice, Cheese, Sour Cream, Lettuce]]	$8.99 
+orders.tsv:47	1	Steak Burrito	[Roasted Chili Corn Salsa (Medium), [Rice, Black Beans, Fajita Veggies, Sour Cream]]	$8.99 
+orders.tsv:55	1	Steak Burrito	[Roasted Chili Corn Salsa (Medium), [Rice, Black Beans, Fajita Veggies, Sour Cream]]	$8.99 
+orders.tsv:66	1	Steak Burrito	[Tomatillo-Green Chili Salsa (Medium), [Rice, Black Beans, Sour Cream, Guacamole]]	$11.48 
+orders.tsv:80	1	Steak Burrito	[Fresh Tomato Salsa (Mild), [Rice, Black Beans, Sour Cream, Guacamole]]	$11.48 
+orders.tsv:87	1	Steak Burrito	[Roasted Chili Corn Salsa (Medium), [Rice, Black Beans, Sour Cream]]	$8.99 
+orders.tsv:100	1	Steak Burrito	[Roasted Chili Corn Salsa (Medium), [Rice, Black Beans, Sour Cream]]	$8.99 
+orders.tsv:101	1	Steak Burrito	[Tomatillo-Green Chili Salsa (Medium), [Black Beans, Rice, Cheese, Sour Cream, Lettuce]]	$8.99 
+orders.tsv:103	1	Steak Burrito	[Tomatillo Red Chili Salsa, [Rice, Black Beans, Cheese, Sour Cream, Guacamole, Lettuce]]	$11.75 
+orders.tsv:103	1	Steak Burrito	[Tomatillo Red Chili Salsa, [Rice, Black Beans, Cheese]]	$9.25 
+orders.tsv:103	1	Steak Burrito	[Tomatillo Red Chili Salsa, [Rice, Black Beans, Cheese, Sour Cream, Guacamole, Lettuce]]	$11.75 
+orders.tsv:115	1	Steak Burrito	[Roasted Chili Corn Salsa (Medium), [Black Beans, Rice]]	$8.99 
+orders.tsv:160	1	Steak Burrito	[Roasted Chili Corn Salsa (Medium), [Black Beans, Cheese, Sour Cream, Lettuce]]	$8.99 
+orders.tsv:164	1	Steak Burrito	[Roasted Chili Corn Salsa (Medium), [Rice, Black Beans, Sour Cream]]	$8.99 
+orders.tsv:175	1	Steak Burrito	[Fresh Tomato Salsa, [Rice, Black Beans, Cheese, Sour Cream, Guacamole]]	$11.75 
+orders.tsv:194	1	Steak Burrito	[Fresh Tomato Salsa (Mild), [Black Beans, Rice, Cheese, Sour Cream, Lettuce]]	$8.99 
+orders.tsv:205	1	Steak Burrito	[Tomatillo Red Chili Salsa, [Rice, Black Beans, Cheese, Sour Cream, Lettuce]]	$9.25 
+orders.tsv:211	1	Steak Burrito	[Roasted Chili Corn Salsa, [Rice, Black Beans, Sour Cream, Lettuce, Guacamole]]	$11.75 
+orders.tsv:233	1	Steak Burrito	[Fresh Tomato Salsa, [Fajita Vegetables, Rice, Black Beans, Cheese, Sour Cream]]	$9.25 
+orders.tsv:267	1	Steak Burrito	[Roasted Chili Corn Salsa (Medium), [Rice, Black Beans, Sour Cream]]	$8.99 
+orders.tsv:269	1	Steak Burrito	[Roasted Chili Corn Salsa (Medium), [Rice, Black Beans, Sour Cream, Guacamole]]	$11.48 
+orders.tsv:273	1	Steak Burrito	[Fresh Tomato Salsa, [Rice, Black Beans, Sour Cream, Cheese, Lettuce, Guacamole]]	$11.75 
+orders.tsv:287	1	Steak Burrito	[Fresh Tomato Salsa (Mild), [Black Beans, Rice, Fajita Veggies, Cheese, Sour Cream, Lettuce]]	$8.99 
+orders.tsv:300	1	Steak Burrito	[Roasted Chili Corn Salsa, [Fajita Vegetables, Black Beans, Sour Cream, Guacamole, Lettuce]]	$11.75 
+orders.tsv:332	1	Steak Burrito	[Roasted Chili Corn Salsa (Medium), [Rice, Black Beans, Sour Cream, Lettuce]]	$8.99 
+orders.tsv:334	1	Steak Burrito	[Tomatillo Green Chili Salsa, [Rice, Black Beans, Cheese, Sour Cream]]	$9.25 
+orders.tsv:355	1	Steak Burrito	[Tomatillo Green Chili Salsa, [Rice, Fajita Vegetables, Black Beans, Cheese]]	$9.25 
+orders.tsv:371	1	Steak Burrito	[[Fresh Tomato Salsa (Mild), Roasted Chili Corn Salsa (Medium), Tomatillo-Red Chili Salsa (Hot)], [Black Beans, Rice, Sour Cream]]	$8.99 
+orders.tsv:377	1	Steak Burrito	[Roasted Chili Corn Salsa (Medium), [Black Beans, Rice, Cheese]]	$8.99 
+orders.tsv:397	1	Steak Burrito	[Fresh Tomato Salsa, [Rice, Black Beans, Cheese, Sour Cream]]	$9.25 
+orders.tsv:442	1	Steak Burrito	[[Roasted Chili Corn Salsa (Medium), Tomatillo-Green Chili Salsa (Medium)], [Rice, Black Beans, Sour Cream, Guacamole]]	$11.48 
+orders.tsv:447	1	Steak Burrito	[[Fresh Tomato Salsa (Mild), Roasted Chili Corn Salsa (Medium), Tomatillo-Red Chili Salsa (Hot)], [Black Beans, Rice, Sour Cream]]	$8.99 
+orders.tsv:461	1	Steak Burrito	[Fresh Tomato Salsa, [Fajita Vegetables, Rice, Black Beans, Sour Cream, Guacamole, Lettuce]]	$11.75 
+orders.tsv:473	1	Steak Burrito	[Fresh Tomato Salsa, [Fajita Vegetables, Rice, Black Beans, Cheese, Sour Cream]]	$9.25 
+orders.tsv:476	1	Steak Burrito	[Fresh Tomato Salsa (Mild), [Pinto Beans, Black Beans, Rice, Fajita Veggies, Cheese, Sour Cream, Lettuce]]	$8.99 
+orders.tsv:491	1	Steak Burrito	[Fresh Tomato Salsa, [Rice, Black Beans, Cheese, Sour Cream, Guacamole, Lettuce]]	$11.75 
+orders.tsv:496	1	Steak Burrito	[[Fresh Tomato Salsa (Mild), Roasted Chili Corn Salsa (Medium)], [Black Beans, Rice, Cheese, Lettuce]]	$8.99 
+orders.tsv:502	1	Steak Burrito	[Roasted Chili Corn Salsa, [Black Beans, Cheese, Sour Cream, Guacamole, Lettuce]]	$11.75 
+orders.tsv:511	3	Steak Burrito	[Fresh Tomato Salsa, [Fajita Vegetables, Rice, Black Beans, Cheese, Lettuce]]	$27.75 
+orders.tsv:513	2	Steak Burrito	[[Tomatillo-Green Chili Salsa (Medium), Tomatillo-Red Chili Salsa (Hot)], [Black Beans, Rice, Fajita Veggies, Sour Cream]]	$17.98 
+orders.tsv:519	1	Steak Burrito	[Fresh Tomato Salsa (Mild), [Rice, Black Beans, Cheese, Sour Cream, Guacamole, Lettuce]]	$11.48 
+orders.tsv:525	1	Steak Burrito	[[Roasted Chili Corn Salsa (Medium), Fresh Tomato Salsa (Mild)], [Lettuce, Black Beans, Sour Cream, Cheese, Rice, Fajita Veggies, Pinto Beans]]	$8.99 
+orders.tsv:534	1	Steak Burrito	[Tomatillo Red Chili Salsa, [Fajita Vegetables, Black Beans, Cheese, Sour Cream, Guacamole]]	$11.75 
+orders.tsv:541	1	Steak Burrito	[Fresh Tomato Salsa, [Fajita Vegetables, Rice, Black Beans, Cheese, Sour Cream, Guacamole]]	$11.75 
+orders.tsv:590	1	Steak Burrito	[Fresh Tomato Salsa, [Rice, Fajita Vegetables, Black Beans, Sour Cream, Cheese, Lettuce]]	$9.25 
+orders.tsv:614	1	Steak Burrito	[[Roasted Chili Corn Salsa (Medium), Tomatillo-Green Chili Salsa (Medium)], [Rice, Black Beans, Sour Cream]]	$8.99 
+orders.tsv:633	1	Steak Burrito	[Roasted Chili Corn Salsa, [Black Beans, Cheese, Lettuce]]	$9.25 
+orders.tsv:640	1	Steak Burrito	[Roasted Chili Corn Salsa, [Fajita Vegetables, Black Beans, Sour Cream, Lettuce, Guacamole]]	$11.75 
+orders.tsv:642	1	Steak Burrito	[Roasted Chili Corn Salsa, [Black Beans, Cheese, Lettuce]]	$9.25 
+orders.tsv:661	1	Steak Burrito	[Tomatillo Red Chili Salsa, [Rice, Black Beans, Cheese, Sour Cream, Lettuce]]	$9.25 
+orders.tsv:691	1	Steak Burrito	[Tomatillo Red Chili Salsa, [Rice, Black Beans, Cheese, Lettuce]]	$9.25 
+orders.tsv:691	1	Steak Burrito	[Fresh Tomato Salsa, [Rice, Black Beans, Cheese, Sour Cream, Guacamole, Lettuce]]	$11.75 
+orders.tsv:712	1	Steak Burrito	[Roasted Chili Corn Salsa, [Fajita Vegetables, Rice, Black Beans, Cheese, Sour Cream, Guacamole, Lettuce]]	$11.75 
+orders.tsv:714	1	Steak Burrito	[Roasted Chili Corn Salsa, [Fajita Vegetables, Rice, Black Beans, Cheese]]	$9.25 
+orders.tsv:715	1	Steak Burrito	[Roasted Chili Corn Salsa, [Lettuce, Black Beans, Cheese]]	$9.25 
+orders.tsv:772	1	Steak Burrito	[Roasted Chili Corn Salsa, [Rice, Black Beans, Sour Cream, Cheese, Lettuce]]	$9.25 
+orders.tsv:794	1	Steak Burrito	[Fresh Tomato Salsa (Mild), [Black Beans, Rice, Cheese, Sour Cream, Lettuce]]	$8.99 
+orders.tsv:810	1	Steak Burrito	[Fresh Tomato Salsa (Mild), [Black Beans, Rice, Guacamole, Lettuce]]	$11.48 
+orders.tsv:823	1	Steak Burrito	[Fresh Tomato Salsa, [Rice, Black Beans, Cheese, Sour Cream, Guacamole, Lettuce]]	$11.75 
+orders.tsv:852	1	Steak Burrito	[[Fresh Tomato Salsa (Mild), Roasted Chili Corn Salsa (Medium)], [Black Beans, Rice, Fajita Veggies, Sour Cream, Lettuce]]	$8.99 
+orders.tsv:853	1	Steak Burrito	[Roasted Chili Corn Salsa, [Cheese, Black Beans, Lettuce]]	$9.25 
+orders.tsv:859	1	Steak Burrito	[Fresh Tomato Salsa (Mild), Black Beans]	$8.99 
+orders.tsv:868	1	Steak Burrito	[Fresh Tomato Salsa (Mild), [Black Beans, Rice, Cheese, Lettuce]]	$8.99 
+orders.tsv:889	1	Steak Burrito	[[Roasted Chili Corn Salsa (Medium), Tomatillo-Green Chili Salsa (Medium)], [Rice, Black Beans, Pinto Beans, Fajita Veggies, Cheese, Sour Cream, Lettuce]]	$8.99 
+orders.tsv:901	1	Steak Burrito	[[Fresh Tomato Salsa (Mild), Roasted Chili Corn Salsa (Medium)], [Black Beans, Rice, Sour Cream, Guacamole, Lettuce]]	$11.48 
+orders.tsv:901	1	Steak Burrito	[[Fresh Tomato Salsa (Mild), Roasted Chili Corn Salsa (Medium)], [Black Beans, Rice, Cheese, Lettuce]]	$8.99 
+orders.tsv:936	1	Steak Burrito	[Fresh Tomato Salsa, [Rice, Black Beans, Sour Cream, Cheese]]	$9.25 
+orders.tsv:943	1	Steak Burrito	[Roasted Chili Corn Salsa, [Fajita Vegetables, Rice, Black Beans, Pinto Beans, Cheese, Sour Cream, Guacamole, Lettuce]]	$11.75 
+orders.tsv:946	1	Steak Burrito	[Tomatillo Green Chili Salsa, [Fajita Vegetables, Rice, Black Beans, Cheese, Lettuce]]	$9.25 
+orders.tsv:952	1	Steak Burrito	[Tomatillo Green Chili Salsa, [Rice, Black Beans, Cheese, Guacamole, Lettuce]]	$11.75 
+orders.tsv:968	1	Steak Burrito	[Fresh Tomato Salsa, [Rice, Black Beans, Cheese, Sour Cream, Guacamole, Lettuce]]	$11.75 
+orders.tsv:996	1	Steak Burrito	[Tomatillo Red Chili Salsa, [Fajita Vegetables, Rice, Black Beans, Pinto Beans, Cheese, Sour Cream, Guacamole, Lettuce]]	$11.75 
+orders.tsv:1077	1	Steak Burrito	[Roasted Chili Corn Salsa, [Cheese, Black Beans, Lettuce]]	$9.25 
+orders.tsv:1118	1	Steak Burrito	[[Roasted Chili Corn Salsa (Medium), Tomatillo-Red Chili Salsa (Hot)], [Black Beans, Rice, Cheese, Sour Cream, Lettuce]]	$8.99 
+orders.tsv:1121	1	Steak Burrito	[Roasted Chili Corn Salsa (Medium), [Pinto Beans, Black Beans, Rice, Fajita Veggies, Lettuce]]	$8.99 
+orders.tsv:1128	1	Steak Burrito	[Roasted Chili Corn Salsa (Medium), [Black Beans, Rice, Fajita Veggies, Cheese, Sour Cream]]	$8.99 
+orders.tsv:1131	1	Steak Burrito	[[Roasted Chili Corn Salsa (Medium), Fresh Tomato Salsa (Mild)], [Rice, Black Beans, Cheese, Lettuce]]	$8.99 
+orders.tsv:1133	1	Steak Burrito	[[Roasted Chili Corn Salsa (Medium), Tomatillo-Red Chili Salsa (Hot)], [Black Beans, Rice, Cheese, Sour Cream, Lettuce]]	$8.99 
+orders.tsv:1147	1	Steak Burrito	[[Roasted Chili Corn Salsa (Medium), Tomatillo-Red Chili Salsa (Hot)], [Black Beans, Rice, Cheese, Sour Cream, Lettuce]]	$8.99 
+orders.tsv:1156	1	Steak Burrito	[Roasted Chili Corn Salsa (Medium), [Black Beans, Rice, Cheese, Sour Cream, Lettuce]]	$8.99 
+orders.tsv:1170	1	Steak Burrito	[Tomatillo-Red Chili Salsa (Hot), [Black Beans, Rice, Fajita Veggies, Cheese]]	$8.99 
+orders.tsv:1175	2	Steak Burrito	[[Tomatillo-Green Chili Salsa (Medium), Roasted Chili Corn Salsa (Medium), Tomatillo-Red Chili Salsa (Hot)], [Black Beans, Rice, Cheese, Sour Cream, Guacamole, Lettuce]]	$22.96 
+orders.tsv:1179	1	Steak Burrito	[Fresh Tomato Salsa, [Rice, Black Beans, Cheese]]	$9.25 
+orders.tsv:1198	1	Steak Burrito	[[Roasted Chili Corn Salsa (Medium), Tomatillo-Red Chili Salsa (Hot)], [Black Beans, Rice, Cheese, Sour Cream, Lettuce]]	$8.99 
+orders.tsv:1220	1	Steak Burrito	[Tomatillo-Green Chili Salsa (Medium), [Black Beans, Rice, Cheese]]	$8.99 
+orders.tsv:1233	1	Steak Burrito	[Tomatillo-Red Chili Salsa (Hot), [Black Beans, Rice, Cheese, Sour Cream, Guacamole, Lettuce]]	$11.48 
+orders.tsv:1241	1	Steak Burrito	[Tomatillo Green Chili Salsa, [Rice, Black Beans, Cheese, Sour Cream, Lettuce]]	$9.25 
+orders.tsv:1243	1	Steak Burrito	[Fresh Tomato Salsa, [Rice, Black Beans, Cheese, Sour Cream]]	$9.25 
+orders.tsv:1250	2	Steak Burrito	[Tomatillo Red Chili Salsa, [Cheese, Black Beans, Rice, Lettuce, Sour Cream]]	$18.50 
+orders.tsv:1252	1	Steak Burrito	[Fresh Tomato (Mild), [Black Beans, Guacamole, Rice, Sour Cream, Cheese]]	$11.08 
+orders.tsv:1258	1	Steak Burrito	[[Roasted Chili Corn Salsa (Medium), Tomatillo-Green Chili Salsa (Medium)], [Rice, Black Beans, Sour Cream]]	$8.99 
+orders.tsv:1266	1	Steak Burrito	[Tomatillo Red Chili Salsa, [Rice, Black Beans, Lettuce]]	$9.25 
+orders.tsv:1296	1	Steak Burrito	[Fresh Tomato Salsa, [Black Beans, Cheese, Guacamole, Lettuce]]	$11.75 
+orders.tsv:1300	1	Steak Burrito	[[Roasted Chili Corn Salsa (Medium), Tomatillo-Red Chili Salsa (Hot)], [Black Beans, Rice, Cheese, Sour Cream, Lettuce]]	$8.99 
+orders.tsv:1311	1	Steak Burrito	[Tomatillo-Red Chili Salsa (Hot), [Guacamole, Lettuce, Sour Cream, Rice, Cheese, Black Beans]]	$11.48 
+orders.tsv:1344	1	Steak Burrito	[Fresh Tomato Salsa, [Rice, Black Beans, Cheese, Sour Cream, Guacamole]]	$11.75 
+orders.tsv:1356	1	Steak Burrito	[Fresh Tomato Salsa, [Rice, Black Beans, Cheese]]	$9.25 
+orders.tsv:1356	1	Steak Burrito	[Fresh Tomato Salsa, [Fajita Vegetables, Rice, Black Beans, Cheese, Guacamole]]	$11.75 
+orders.tsv:1389	1	Steak Burrito	[Roasted Chili Corn Salsa, [Rice, Black Beans, Cheese]]	$9.25 
+orders.tsv:1414	1	Steak Burrito	[Fresh Tomato Salsa, [Rice, Black Beans, Pinto Beans, Cheese, Sour Cream, Lettuce]]	$9.25 
+orders.tsv:1418	1	Steak Burrito	[Tomatillo Red Chili Salsa, [Rice, Black Beans]]	$9.25 
+orders.tsv:1421	1	Steak Burrito	[Tomatillo Red Chili Salsa, [Rice, Black Beans, Cheese, Sour Cream, Lettuce]]	$9.25 
+orders.tsv:1431	1	Steak Burrito	[Fresh Tomato Salsa, [Rice, Black Beans, Cheese, Sour Cream, Lettuce]]	$9.25 
+orders.tsv:1431	1	Steak Burrito	[Tomatillo Green Chili Salsa, [Rice, Black Beans, Cheese, Sour Cream, Lettuce]]	$9.25 
+orders.tsv:1431	1	Steak Burrito	[Fresh Tomato Salsa, [Rice, Black Beans, Cheese, Lettuce]]	$9.25 
+orders.tsv:1432	1	Steak Burrito	[Tomatillo Green Chili Salsa, [Rice, Black Beans, Sour Cream, Lettuce]]	$9.25 
+orders.tsv:1443	3	Steak Burrito	[Fresh Tomato Salsa, [Rice, Black Beans, Cheese, Sour Cream]]	$27.75 
+orders.tsv:1449	2	Steak Burrito	[Fresh Tomato Salsa (Mild), [Black Beans, Rice, Fajita Veggies, Cheese]]	$17.98 
+orders.tsv:1450	1	Steak Burrito	[Tomatillo Green Chili Salsa, [Rice, Black Beans, Lettuce]]	$9.25 
+orders.tsv:1456	1	Steak Burrito	[Tomatillo Green Chili Salsa, [Rice, Black Beans, Pinto Beans, Cheese, Sour Cream, Guacamole, Lettuce]]	$11.75 
+orders.tsv:1475	1	Steak Burrito	[[Roasted Chili Corn Salsa (Medium), Tomatillo-Red Chili Salsa (Hot), Fresh Tomato Salsa (Mild)], [Rice, Black Beans, Pinto Beans, Cheese, Sour Cream, Lettuce]]	$8.99 
+orders.tsv:1483	1	Steak Burrito	[Roasted Chili Corn Salsa, [Rice, Black Beans, Cheese, Sour Cream, Guacamole, Lettuce]]	$11.75 
+orders.tsv:1505	1	Steak Burrito	[Fresh Tomato Salsa, [Rice, Black Beans, Cheese]]	$9.25 
+orders.tsv:1508	1	Steak Burrito	[Fresh Tomato Salsa, [Rice, Black Beans, Cheese, Sour Cream, Guacamole, Lettuce]]	$11.75 
+orders.tsv:1522	1	Steak Burrito	[Fresh Tomato Salsa, [Fajita Vegetables, Rice, Black Beans, Guacamole, Lettuce]]	$11.75 
+orders.tsv:1525	1	Steak Burrito	[Fresh Tomato Salsa, [Rice, Black Beans, Cheese, Sour Cream]]	$9.25 
+orders.tsv:1526	1	Steak Burrito	[Tomatillo Red Chili Salsa, [Fajita Vegetables, Rice, Black Beans, Cheese, Sour Cream, Guacamole, Lettuce]]	$11.75 
+orders.tsv:1537	1	Steak Burrito	[Fresh Tomato Salsa, [Rice, Black Beans, Cheese, Lettuce]]	$9.25 
+orders.tsv:1547	1	Steak Burrito	[Tomatillo Red Chili Salsa, [Rice, Black Beans, Cheese]]	$9.25 
+orders.tsv:1585	1	Steak Burrito	[[Fresh Tomato Salsa (Mild), Tomatillo-Red Chili Salsa (Hot)], [Black Beans, Rice, Fajita Veggies, Cheese, Lettuce]]	$8.99 
+orders.tsv:1592	1	Steak Burrito	[Tomatillo Red Chili Salsa, [Rice, Black Beans, Sour Cream, Lettuce]]	$9.25 
+orders.tsv:1598	1	Steak Burrito	[Tomatillo Red Chili (Hot), [Lettuce, Black Beans, Rice, Sour Cream, Cheese]]	$8.69 
+orders.tsv:1602	1	Steak Burrito	[Roasted Chili Corn Salsa (Medium), [Rice, Black Beans, Pinto Beans, Fajita Veggies, Lettuce]]	$8.99 
+orders.tsv:1603	1	Steak Burrito	[Roasted Chili Corn Salsa, [Rice, Black Beans, Cheese, Sour Cream]]	$9.25 
+orders.tsv:1614	1	Steak Burrito	[Roasted Chili Corn Salsa, [Fajita Vegetables, Rice, Black Beans, Cheese, Guacamole, Lettuce]]	$11.75 
+orders.tsv:1638	1	Steak Burrito	[Tomatillo-Red Chili Salsa (Hot), [Black Beans, Rice, Cheese, Lettuce]]	$8.99 
+orders.tsv:1639	1	Steak Burrito	[Fresh Tomato Salsa, [Rice, Black Beans, Cheese, Sour Cream, Guacamole]]	$11.75 
+orders.tsv:1641	1	Steak Burrito	[Roasted Chili Corn Salsa, [Rice, Black Beans, Cheese, Sour Cream, Lettuce]]	$9.25 
+orders.tsv:1643	1	Steak Burrito	[Tomatillo Red Chili Salsa, [Fajita Vegetables, Rice, Black Beans, Cheese, Sour Cream, Guacamole, Lettuce]]	$11.75 
+orders.tsv:1676	1	Steak Burrito	[Fresh Tomato Salsa, [Rice, Fajita Vegetables, Black Beans, Sour Cream, Cheese]]	$9.25 
+orders.tsv:1695	1	Steak Burrito	[Tomatillo Red Chili Salsa, [Rice, Black Beans, Cheese]]	$9.25 
+orders.tsv:1700	1	Steak Burrito	[Fresh Tomato Salsa, [Rice, Black Beans, Cheese, Guacamole, Lettuce]]	$11.75 
+orders.tsv:1719	2	Steak Burrito	[Tomatillo Red Chili Salsa, [Rice, Black Beans, Cheese, Lettuce, Sour Cream]]	$18.50 
+orders.tsv:1726	1	Steak Burrito	[Tomatillo Red Chili Salsa, [Rice, Black Beans, Cheese, Sour Cream, Guacamole, Lettuce]]	$11.75 
+orders.tsv:1727	1	Steak Burrito	[Roasted Chili Corn Salsa, [Fajita Vegetables, Rice, Black Beans, Cheese]]	$9.25 
+orders.tsv:1748	1	Steak Burrito	[Fresh Tomato Salsa, [Fajita Vegetables, Rice, Black Beans, Pinto Beans, Cheese, Sour Cream, Guacamole, Lettuce]]	$11.75 
+orders.tsv:1753	1	Steak Burrito	[Fresh Tomato Salsa, [Rice, Black Beans, Sour Cream, Cheese]]	$9.25 
+orders.tsv:1758	1	Steak Burrito	[Fresh Tomato Salsa, [Cheese, Black Beans, Rice]]	$9.25 
+orders.tsv:1766	1	Steak Burrito	[Tomatillo Red Chili Salsa, [Fajita Vegetables, Rice, Black Beans, Sour Cream, Guacamole]]	$11.75 
+orders.tsv:1772	1	Steak Burrito	[Tomatillo Red Chili Salsa, [Rice, Black Beans, Cheese]]	$9.25 
+orders.tsv:1807	1	Steak Burrito	[Fresh Tomato Salsa, [Rice, Black Beans, Cheese]]	$9.25 
+orders.tsv:1833	1	Steak Burrito	[Fresh Tomato Salsa, [Rice, Black Beans, Sour Cream, Cheese, Lettuce, Guacamole]]	$11.75 
