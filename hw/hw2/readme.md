@@ -16,7 +16,8 @@
 
 > The wc cli function with -l flag says that there are 5,574 lines in the smsspam collection
 
-> awk `
+> With awk, 5574 lines in file `awk 'END { print NR }' sms*'`
+
 
 ####2. What is the average number of words per text? What is the average number of characters per text?
 
