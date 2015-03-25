@@ -1,2 +1,3 @@
-BEGIN { FS=":" }
-{ print NR }
+#! /bin/awk -f
+
+BEGIN { print "Don't Panic!" }
