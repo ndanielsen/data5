@@ -239,13 +239,13 @@ class BurritoFoo(object):
 		for protein, average in results:
 			print '\t', protein, "orders have", average, "average fatty toppings"
 		print '\n'
-<<<<<<< HEAD
+
 		print "My conclusion is that people who order steak and carnitas dishes indulge a little more on fatty toppings. Chicken eaters are less likely to order fatty toppings and are probably watching their waistlines. \n"
 
 		print "Bene note: Too lazy to do a true statistical analysis with only built in python tools."
-=======
+
 		print "My conclusion is that people who order steak and carnitas dishes indulge a little more on fatty toppings. Chicken eaters are less likely to order fatty toppings and are probably watching their waistlines. I'm too lazy at the moment to do a more indepth statistical analysis"
->>>>>>> new
+
 
 if __name__ == "__main__":
  
