@@ -1,5 +1,5 @@
-# GA-DC DAT5 Homework Week2
-`echo "#GA-DC DAT5 Homework Week2" >> readme**.md`
+# GA-DC DAT5 Homework Two
+`echo "#GA-DC DAT5 Homework2" >> readme**.md`
 
 ######_With just enough illistrative code_
 
