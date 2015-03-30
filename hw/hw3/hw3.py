@@ -77,7 +77,7 @@ class VroomData(object):
 		self.fivewithlessthanfourworstmpg = self.df[self.df.cylinders<=4].sort('mpg', ascending=True)[:5].car_name
 
 
-		pass
+		
 
 	def part4(self):
 		'''
@@ -100,9 +100,16 @@ class VroomData(object):
 		self.df.groupby('model_year').mean()
 		### The sweet spot for cylinders seems to be at 4
 
+		self.df.groupby(['model_year', 'mpg']).mean().sort(ascending=True)
+
+		self.dfgroupconclusion = "It seems that MPG has a inverse linear relationship with cylinders, displacement, horsepower, and weight. In general, also a linear relationship with model_year. "
 
 
-		pass
+	def main(self):
+		self.part1()
+		self.part2()
+		self.part3()
+		self.answers()
 
 	def answers(self):
 
@@ -110,14 +117,6 @@ class VroomData(object):
 
 
 		pass
-
-
-	def main(self):
-		self.part1()
-		self.part2()
-		self.part3()
-
-		self.answers()
 
 
 
