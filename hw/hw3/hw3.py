@@ -41,6 +41,7 @@ class VroomData(object):
 
 		self.df= pd.read_table(self.input_file, sep='|')
 
+		
 
 	def part2(self):
 
@@ -61,6 +62,9 @@ class VroomData(object):
 		self.averages = [["Column " + "'" + col + "'" + ":" + "'" + "Average: " + str(self.numdf[col].mean())] for col in self.numdf.columns ]
 		self.median = [["Column " + "'" + col + "'" + ":" + "'" + "Median: " + str(self.numdf[col].median())] for col in self.numdf.columns ]
 		self.difference = [["Column " + "'" + col + "'" + ":" + "'" + "Difference: " + str(self.numdf[col].median() - self.numdf[col].mean()) ] for col in self.numdf.columns ]
+
+
+
 
 	def part3(self):
 		'''
@@ -102,7 +106,7 @@ class VroomData(object):
 
 		self.df.groupby(['model_year', 'mpg']).mean().sort(ascending=True)
 
-		self.dfgroupconclusion = "It seems that MPG has a inverse linear relationship with cylinders, displacement, horsepower, and weight. In general, also a linear relationship with model_year. "
+		self.dfgroupconclusion = "It seems that MPG has a inverse linear relationship with cylinders, displacement, horsepower, and weight. In general, also a linear relationship with model_year."
 
 	def answers(self):
 		
@@ -117,8 +121,79 @@ class VroomData(object):
 		self.part1()
 		self.part2()
 		self.part3()
-		self.answers()
+		self.part4()
+		print self.answers()
 
+	def answers(self):
+
+		print "#GA-DC DAT5 Homework Three"
+		print '`echo "#GA-DC DAT5 Homework3" >> readme**.md`'
+		print "######_With just enough illistrative code_"
+
+
+
+		print "\n"
+		print "\n"
+		print "####" + self.part1.__doc__
+		print "_Answer is verbose but I'll print the head of ten_"
+		#print ">" + self.df.head(10)
+
+
+		print "\n"
+		print "\n"
+		print "####" + self.part2.__doc__
+
+		print "\n"
+		print "#####" + "Numerical only header"
+		print self.numdf.head() 
+
+		print "\n"
+		print self.numrows 
+		
+		print "\n"
+		print self.numcolumns 
+		
+		print "\n"
+		print self.ranges 
+		
+		print "\n"
+		print self.averages 
+		
+		print "\n"
+		print self.median 
+		
+		print "\n"
+		print self.difference 
+		
+
+
+
+
+		print "\n"
+		print "\n"
+		print "####" + self.part3.__doc__
+		print "\n"
+		print "#####" + "Best Five MPG"
+		print self.fivebestmpg 
+		print "\n"
+		print "#####" + "Four Cylcinders with Best Five MPG"
+		print self.fivewithmorethanfourbestmpg 
+		print "\n"
+		print "#####" + "Worst Five MPG"
+		print self.fiveworstmpg 
+		print "\n"
+		print "#####" + "Four Cylcinders with Worst Five MPG"
+		print self.fivewithlessthanfourworstmpg 
+
+		print "\n"
+		print "\n"
+		print "####" + self.part4.__doc__
+
+		print "_" + self.dfgroupconclusion + "_" 
+
+
+
+>>>>>>> 795d093b2dd5067ab4ea849db5cc32e3b9b351b4
 
 
 
@@ -130,4 +205,4 @@ if __name__ == "__main__":
 
 	test.main()
 
-	print test.fivewithlessthanfourworstmpg
+	print test.answers
