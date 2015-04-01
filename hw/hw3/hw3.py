@@ -64,6 +64,21 @@ class VroomData(object):
 		self.difference = [["Column " + "'" + col + "'" + ":" + "'" + "Difference: " + str(self.numdf[col].median() - self.numdf[col].mean()) ] for col in self.numdf.columns ]
 
 
+		# working on nested dictionary comprehensions
+		self.rangesdict = 	{col: 
+								{	"Max": self.numdf[col].max(), 
+									"Min": self.numdf[col].min(), 
+							 		"Average": self.numdf[col].mean(),  
+		 							"Median": self.numdf[col].median(), 
+		 							"Difference": self.numdf[col].median() - self.numdf[col].mean()
+
+		 					
+		 						}  
+		 					
+		 							for col in self.numdf.columns
+
+		 					}
+
 
 
 	def part3(self):
@@ -104,25 +119,10 @@ class VroomData(object):
 		self.df.groupby('model_year').mean()
 		### The sweet spot for cylinders seems to be at 4
 
-		self.df.groupby(['model_year', 'mpg']).mean().sort(ascending=True)
+		self.dfgroupconclusioncode = "self.df.groupby(['model_year', 'mpg']).mean().sort(ascending=True)"
 
 		self.dfgroupconclusion = "It seems that MPG has a inverse linear relationship with cylinders, displacement, horsepower, and weight. In general, also a linear relationship with model_year."
 
-	def answers(self):
-		
-
-
-
-		pass
-
-
-
-	def main(self):
-		self.part1()
-		self.part2()
-		self.part3()
-		self.part4()
-		print self.answers()
 
 	def answers(self):
 
@@ -135,8 +135,8 @@ class VroomData(object):
 		print "\n"
 		print "\n"
 		print "####" + self.part1.__doc__
-		print "_Answer is verbose but I'll print the head of ten_"
-		#print ">" + self.df.head(10)
+		print "_Answer is verbose but I'll print the head of five_"
+		print  self.df.head(5)
 
 
 		print "\n"
@@ -144,26 +144,22 @@ class VroomData(object):
 		print "####" + self.part2.__doc__
 
 		print "\n"
-		print "#####" + "Numerical only header"
-		print self.numdf.head() 
+		print "#####" + "Numerical values only with header of three"
+		print self.numdf.head(3) 
 
 		print "\n"
+		print "######" + "Number of Rows"
 		print self.numrows 
 		
 		print "\n"
+		print "######" + "Number of Columns"
 		print self.numcolumns 
 		
-		print "\n"
-		print self.ranges 
-		
-		print "\n"
-		print self.averages 
-		
-		print "\n"
-		print self.median 
-		
-		print "\n"
-		print self.difference 
+
+
+		for item in  test.rangesdict.viewitems():
+			print "####" + item[0] + "'s" + " Calculations"
+			print item[1]
 		
 
 
@@ -188,12 +184,17 @@ class VroomData(object):
 		print "\n"
 		print "\n"
 		print "####" + self.part4.__doc__
-
+		print self.dfgroupconclusioncode 
 		print "_" + self.dfgroupconclusion + "_" 
 
+	def main(self):
+		self.part1()
+		self.part2()
+		self.part3()
+		self.part4()
+		print self.answers()
 
 
->>>>>>> 795d093b2dd5067ab4ea849db5cc32e3b9b351b4
 
 
 
@@ -205,4 +206,14 @@ if __name__ == "__main__":
 
 	test.main()
 
-	print test.answers
+
+
+	# for value in test.rangesdict.keys():
+	# 	print "#####" + value
+	# 	print v.viewitems()
+
+									# 	{	"Max": self.numdf[col].max(), 
+									# "Min": self.numdf[col].min(), 
+							 	# 	"Average": self.numdf[col].mean(),  
+		 						# 	"Median": self.numdf[col].median(), 
+		 						# 	"Difference": self.numdf[col].median() - self.numdf[col].mean()

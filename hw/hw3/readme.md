@@ -6,20 +6,33 @@ hello
 
 
 
-####
-		Part 1
+####Part 1
 		Load the data (https://raw.githubusercontent.com/justmarkham/DAT5/master/data/auto_mpg.txt) 
 		into a DataFrame.  Try looking at the "head" of the file in the command line
 		to see how the file is delimited and how to load it.
 		Note:  You do not need to turn in any command line code you may use.
 		
-_Answer is verbose but I'll print the head of ten_
+_Answer is verbose but I'll print the head of five_
+   mpg  cylinders  displacement  horsepower  weight  acceleration  model_year  \
+0   18          8           307         130    3504          12.0          70   
+1   15          8           350         165    3693          11.5          70   
+2   18          8           318         150    3436          11.0          70   
+3   16          8           304         150    3433          12.0          70   
+4   17          8           302         140    3449          10.5          70   
+
+   origin                   car_name  
+0       1  chevrolet chevelle malibu  
+1       1          buick skylark 320  
+2       1         plymouth satellite  
+3       1              amc rebel sst  
+4       1                ford torino  
+
+[5 rows x 9 columns]
 
 
 
 
-####
-		Part 2
+####Part 2
 		Get familiar with the data.  Answer the following questions:
 		- What is the shape of the data?  How many rows and columns are there?
 		- What variables are available?
@@ -29,44 +42,47 @@ _Answer is verbose but I'll print the head of ten_
 		
 
 
-#####Numerical only header
+#####Numerical values only with header of three
    mpg  cylinders  displacement  horsepower  weight  acceleration  model_year  \
 0   18          8           307         130    3504          12.0          70   
 1   15          8           350         165    3693          11.5          70   
 2   18          8           318         150    3436          11.0          70   
-3   16          8           304         150    3433          12.0          70   
-4   17          8           302         140    3449          10.5          70   
 
    origin  
 0       1  
 1       1  
 2       1  
-3       1  
-4       1  
+
+[3 rows x 8 columns]
 
 
+######Number of Rows
 392
 
 
+######Number of Columns
 9
+####acceleration's Calculations
+{'Max': 24.800000000000001, 'Average': 15.541326530612228, 'Difference': -0.041326530612227685, 'Median': 15.5, 'Min': 8.0}
+####mpg's Calculations
+{'Max': 46.600000000000001, 'Average': 23.445918367346941, 'Difference': -0.69591836734694112, 'Median': 22.75, 'Min': 9.0}
+####model_year's Calculations
+{'Max': 82, 'Average': 75.979591836734699, 'Difference': 0.020408163265301482, 'Median': 76.0, 'Min': 70}
+####cylinders's Calculations
+{'Max': 8, 'Average': 5.4719387755102042, 'Difference': -1.4719387755102042, 'Median': 4.0, 'Min': 3}
+####weight's Calculations
+{'Max': 5140, 'Average': 2977.5841836734694, 'Difference': -174.0841836734694, 'Median': 2803.5, 'Min': 1613}
+####displacement's Calculations
+{'Max': 455.0, 'Average': 194.41198979591837, 'Difference': -43.411989795918373, 'Median': 151.0, 'Min': 68.0}
+####horsepower's Calculations
+{'Max': 230, 'Average': 104.46938775510205, 'Difference': -10.969387755102048, 'Median': 93.5, 'Min': 46}
+####origin's Calculations
+{'Max': 3, 'Average': 1.5765306122448979, 'Difference': -0.57653061224489788, 'Median': 1.0, 'Min': 1}
 
 
-[["Column 'mpg':'Max: 46.6 , Min:9.0"], ["Column 'cylinders':'Max: 8 , Min:3"], ["Column 'displacement':'Max: 455.0 , Min:68.0"], ["Column 'horsepower':'Max: 230 , Min:46"], ["Column 'weight':'Max: 5140 , Min:1613"], ["Column 'acceleration':'Max: 24.8 , Min:8.0"], ["Column 'model_year':'Max: 82 , Min:70"], ["Column 'origin':'Max: 3 , Min:1"]]
 
 
-[["Column 'mpg':'Average: 23.4459183673"], ["Column 'cylinders':'Average: 5.47193877551"], ["Column 'displacement':'Average: 194.411989796"], ["Column 'horsepower':'Average: 104.469387755"], ["Column 'weight':'Average: 2977.58418367"], ["Column 'acceleration':'Average: 15.5413265306"], ["Column 'model_year':'Average: 75.9795918367"], ["Column 'origin':'Average: 1.57653061224"]]
-
-
-[["Column 'mpg':'Median: 22.75"], ["Column 'cylinders':'Median: 4.0"], ["Column 'displacement':'Median: 151.0"], ["Column 'horsepower':'Median: 93.5"], ["Column 'weight':'Median: 2803.5"], ["Column 'acceleration':'Median: 15.5"], ["Column 'model_year':'Median: 76.0"], ["Column 'origin':'Median: 1.0"]]
-
-
-[["Column 'mpg':'Difference: -0.695918367347"], ["Column 'cylinders':'Difference: -1.47193877551"], ["Column 'displacement':'Difference: -43.4119897959"], ["Column 'horsepower':'Difference: -10.9693877551"], ["Column 'weight':'Difference: -174.084183673"], ["Column 'acceleration':'Difference: -0.0413265306122"], ["Column 'model_year':'Difference: 0.0204081632653"], ["Column 'origin':'Difference: -0.576530612245"]]
-
-
-
-
-####
-		Part 3
+####Part 3
 		Use the data to answer the following questions:
 		- Which 5 cars get the best gas mileage?  
 		- Which 5 cars with more than 4 cylinders get the best gas mileage?
@@ -113,8 +129,7 @@ Name: car_name, dtype: object
 
 
 
-####
-		Part 4
+####Part 4
 		Use groupby and aggregations to explore the relationships 
 		between mpg and the other variables.  Which variables seem to have the greatest
 		effect on mpg?
@@ -127,6 +142,6 @@ Name: car_name, dtype: object
 		to create segments of the data using logical filters and comparing the mpg
 		for each segment of the data.
 		
+self.df.groupby(['model_year', 'mpg']).mean().sort(ascending=True)
 _It seems that MPG has a inverse linear relationship with cylinders, displacement, horsepower, and weight. In general, also a linear relationship with model_year._
 None
-<bound method VroomData.answers of <__main__.VroomData object at 0x7f6f30904e90>>
