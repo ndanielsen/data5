@@ -104,6 +104,14 @@ class VroomData(object):
 
 		self.dfgroupconclusion = "It seems that MPG has a inverse linear relationship with cylinders, displacement, horsepower, and weight. In general, also a linear relationship with model_year. "
 
+	def answers(self):
+		
+
+
+
+		pass
+
+
 
 	def main(self):
 		self.part1()
@@ -111,12 +119,6 @@ class VroomData(object):
 		self.part3()
 		self.answers()
 
-	def answers(self):
-
-
-
-
-		pass
 
 
 
