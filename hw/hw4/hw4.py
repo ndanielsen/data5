@@ -34,6 +34,13 @@ class VizCar(object):
 		self.input_file = input_file
 		pass
 
+	def setUP(self):
+		'''
+		Setup loads a CSV into a pandas dataframe. 
+		'''
+
+		self.df = pd.read_table(self.input_file, sep='|')
+
 	def part1(self):
 
 		'''
@@ -87,8 +94,8 @@ class VizCar(object):
 		print self.part1.__doc__
 		
 		print "\n"
-		self.part1_graphic = "Graphic"
-
+		print self.part1_graphic 
+		print "\n"
 
 		print "_" + self.part1_answer +"_"
 
@@ -98,8 +105,8 @@ class VizCar(object):
 		print self.part2.__doc__
 
 		print "\n"
-		self.part2_graphic = "Graphic"
-
+		print self.part2_graphic 
+		print "\n"
 
 		print "_" + self.part2_answer +"_"
 
@@ -109,7 +116,8 @@ class VizCar(object):
 		print self.part3.__doc__
 
 		print "\n"
-		self.part3_graphic = "Graphic"
+		print self.part3_graphic
+		print "\n"
 
 		print "_" + self.part3_answer + "_"
 		pass
@@ -131,7 +139,7 @@ class VizCar(object):
 
 if __name__ == "__main__":
 
-	print "Hello World!"
+	print "~~Hello World!~~"
 
 	test = VizCar("auto_mpg.txt")
 

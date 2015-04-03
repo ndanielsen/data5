@@ -1,4 +1,4 @@
-Hello World!
+~~Hello World!~~
 #GA-DC DAT5 Homework Four Visualizing Auto Data
 ######_With just enough illustrative code_
 ###Part 1
@@ -11,6 +11,9 @@ Hello World!
 		
 
 
+Graphic
+
+
 _Something_
 ###Part 2
 
@@ -20,6 +23,9 @@ _Something_
 		Part 2
 		Use a scatter matrix to explore relationships between different numeric variables.
 		
+
+
+Graphic
 
 
 _Something_
@@ -37,6 +43,9 @@ _Something_
 		-Do cars made before or after 1975 get better average mpg? (Hint: You need to 
 		create a new column that encodes whether a year is before or after 1975.)
 		
+
+
+Graphic
 
 
 _Something_
