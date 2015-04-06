@@ -154,6 +154,8 @@ _Acceleration looks normally distributed_
 
 
 _After 1975 the average MPG increases._
+
+
 ####BONUS BABY! 
 
 
@@ -164,7 +166,7 @@ _After 1975 the average MPG increases._
 ![Image](https://camo.githubusercontent.com/400202d86d7c3bed0e590cabe821ec7f2ce96dee/687474703a2f2f6d656469612e67697068792e636f6d2f6d656469612f31334842445434515354707665552f67697068792e676966)
 
 
- 
+*I need to figure out how to graph this data* 
 
 
 _So looking at the data, it seems there there are some errors in spelling of car make names the data for each type of vehicle, for example: chevroelt, toyouta, vokswagen   _
