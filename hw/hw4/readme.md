@@ -169,7 +169,7 @@ _After 1975 the average MPG increases._
 *I need to figure out how to graph this data* 
 
 
-_So looking at the data, it seems there there are some errors in spelling of car make names the data for each type of vehicle, for example: chevroelt, toyouta, vokswagen   _
+_So looking at the data, it seems there there are some errors in spelling of car make names the data for each type of vehicle, for example: chevroelt, toyouta, vokswagen_
 make        model_year
 amc         70            17.500000
             71            18.333333
