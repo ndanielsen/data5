@@ -1,168 +1,147 @@
-# -*- coding: utf-8 -*-
-# <nbformat>3.0</nbformat>
-
-# <codecell>
+import time
+import itertools
 
 import pandas as pd
 import matplotlib.pyplot as plt
-%matplotlib inline
-
-# <codecell>
-
-df = pd.read_csv("train.csv")
-
-# <codecell>
-
-df.describe()
-
-# <codecell>
-
-df.tail(15)
-
-# <codecell>
-
-
-# <codecell>
-
-### Replacing Embarked by numberic
-
-def f(x):
-    if x == "S":
-        return 1
-    elif x == "C":
-        return 2
-    elif x == "Q":
-        return 3
-    else:
-        return 0
-
-# <codecell>
-
-df["EmbarkedNum"] = df.Embarked.apply(f)
-
-# <codecell>
-
-df["Sex"] = df.Sex.map({'male':1, "female":2}) ### Replacing Sex is numeric
-
-# <codecell>
-
-pd.scatter_matrix(df)
-plt.savefig('scatter_matrix.png', dpi=1000)
-
-# <codecell>
-
-df.groupby(['Pclass', 'Sex', 'Age']).Survived.count().plot(kind="kde")
-
-# <codecell>
-
-df.columns
-
-# <codecell>
-
-df.groupby(['Pclass', 'Sex', 'Parch']).Survived.count().plot(kind='bar')
-
-# <codecell>
-
-df.groupby(['Pclass', 'Sex', 'Embarked']).Survived.mean().plot(kind='bar')
-
-# <codecell>
-
-df.Embarked
-
-# <codecell>
-
-df.describe()
-
-# <codecell>
-
-### Categorizing DF by sex and pclass
-
-df_male = df[df.Sex == 1]
-
-df_female = df[df.Sex == 2]
-
-df_male_poor = df[(df.Sex == 1) & (df.Pclass == 3)]
-
-df_female_poor = df[(df.Sex == 2) & (df.Pclass == 3)]
-
-# <codecell>
-
-
-# <codecell>
-
-df_male.groupby(['Survived', 'Pclass', 'Parch']).Age.count()
-
-# <codecell>
-
-df.head(1)
-
-# <codecell>
-
-df.columns
-
-# <codecell>
-
-# KNN with K=5
-from sklearn.neighbors import KNeighborsClassifier  # import class
+import numpy as np
+from sklearn.neighbors import KNeighborsClassifier  
 from sklearn.cross_validation import train_test_split
 from sklearn import metrics
-
-X = df_male[['EmbarkedNum', 'Age', 'Parch', 'Pclass']].fillna(0).values ### 85.5 %
-y = df_male.Survived.values
-
-
-X = df_male_poor[['EmbarkedNum', 'Age', 'Parch', 'Pclass']].fillna(0).values ### 85.05 %
-y = df_male_poor.Survived.values
-
-
-# <codecell>
-
-
-X = df_female[['Age', 'Parch', 'Pclass', 'Fare']].fillna(0).values # 74.68
-y = df_female.Survived.values
+import scipy
 
 
 
-# <codecell>
+class BigBoat(object):
 
-X = df_female_poor[['Pclass', 'EmbarkedNum'].fillna(0).values # 72.22%
-y = df_female_poor.Survived.values
+    def __init__(self, file, state_num, knn_num):
 
-# <codecell>
+        self.df = pd.read_csv(file)
+        self.state_num = state_num
+        self.knn_num = knn_num
 
-X = df_female_poor[['Pclass', 'Parch', 'Fare']].fillna(0).values # 75%
-y = df_female_poor.Survived.values
 
-# <codecell>
+    def setUP(self):
 
-def evaluate(train_test_values):
-    X_train, X_test, y_train, y_test = train_test_values
-    results = []
+        pass
+        
+
+
+    def clean(self):
+
+        self.df = self.df.fillna("missing") #### Missing Values replaced with 0
+
+        def f(x): #### Change embarked to numeric location
+
+            if x == "S":
+                return 1
+            elif x == "C":
+                return 2
+            elif x == "Q":
+                return 3
+            else:
+                return 0
+
+        self.df["Embarked"] = self.df.Embarked.apply(f)
+
+        self.df["Sex"] = self.df.Sex.map({'male':1, "female":2}) #### Replacing Gender to numeric
+
     
-    num = 1
-    while num < 100: # definitely refactor this to use xrange (need more coffee next time)
-        knn = KNeighborsClassifier(n_neighbors=num)
-        knn.fit(X_train, y_train)
-        y_pred = knn.predict(X_test)
-        score = metrics.accuracy_score(y_test, y_pred)
-        results.append((score, num))
-        num += 1
-    return max(results) 
 
-# <codecell>
+        def a(x):   ### Replacing Missing Ages
+            if x == "missing":
+                return 0
+            else:
+                return x
+
+        self.df["Age"] = self.df.Age.apply(a)
 
 
-# <codecell>
+        def ms(x): ### Married woman feature creation (if Mrs or Miss)
+            y = x.split()
+            if y[1] == "Mrs.":
+                return 1
+            else:
+                return 0
+            
+            return y[1] 
 
-train_test_values = train_test_split(X, y, random_state=2)
-evaluate(train_test_values)
+        self.df["married_female"] = self.df.Name.apply(ms)
 
-# <codecell>
+    @staticmethod
+    def evaluate(X, y, state_num, knn_num):
+        """
+        Evaluates numberous iterations of train-test-split with numberous nearest neighbors
+
+        Returns the highest average score with the corresponding nearest neighbor
+        """
+        results = {}
+        for state in xrange(1, state_num): ### Number of train-test-split iterations to do
+            X_train, X_test, y_train, y_test = train_test_split(X, y, random_state=state)
+            for num in xrange(1, knn_num): #number of nearest neighbors to try
+                knn = KNeighborsClassifier(n_neighbors=num)
+                knn.fit(X_train, y_train)
+                y_pred = knn.predict(X_test)
+                score = metrics.accuracy_score(y_test, y_pred)
+                if num not in results:
+                    results[num] = list()
+                    results[num].append(score)
+                               
+                else:
+                    results[num].append(score)
+        
+        report = [] 
+        for key, value in results.iteritems(): #reviews all results and returns the greatest average score with n_neighbors num
+            report.append((np.mean(value), key))
+
+        return max(report)
 
 
-# <codecell>
+    def combo_gen(self):
+        """
+        Generates every possible combination of numberic columns
+        """
+        dfnum = self.df._get_numeric_data()
+        del dfnum['PassengerId']
+        del dfnum['Survived']
+        lst = []
+        for col in dfnum.columns:
+            lst.append(col)
+
+        combo = []
+            
+        for i in xrange(1, len(lst)+1):
+            
+            for x in itertools.combinations(lst, i):
+                combo.append(list(x) )
+            
+        return combo    
+
+    def feature_combination(self, combo, state_num, knn_num):
+        now = time.time()
+        column_list = []
+        count = 0
+        for elem in combo:
+            X = self.df[elem].values 
+            y = self.df.Survived.values
+            column_list.append((self.evaluate(X, y, state_num, knn_num), elem))
+            count +=1
+        
+        return max(column_list), count, round(time.time() - now, 0)
 
 
-# <codecell>
+    def test(self):
+        print self.df.head(5)
 
 
+    def main(self):
+
+        self.setUP()
+        self.clean()
+        combo = self.combo_gen()
+        return self.feature_combination(combo, self.state_num, self.knn_num)
+
+if __name__ == '__main__':
+    
+    boat = BigBoat("train.csv", 2, 10)
+
+    print boat.main()
