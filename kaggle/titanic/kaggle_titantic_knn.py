@@ -162,7 +162,7 @@ class BigBoat(object):
         print self.df.head(5)
 
     def report(self):
-        result, count, timer = self.results
+        result, columns, timer = self.results
         knn_test, permutations = result
         percentage, knn_num = knn_test
 
@@ -170,24 +170,26 @@ class BigBoat(object):
         st = datetime.datetime.fromtimestamp(ts)
         date = st.strftime('%Y-%m-%d')
         clock = st.strftime('%H:%M:%S')
+        
 
         test_report = """ \
         
-_Test on %r at %r_
+#Test on %r at %r
 
-%r Random train-test-split trials
-%r Total column permutations 
-c
+%r Random train-test-split trials \n
+%r Total column permutations \n
+%r KNN neighbors evaluated (upper range)  
+\n
 
-*%r Average Correct Prediction*
+**%r Average Correct Prediction** \n
 
-%r KNN Nearest Neighbors Selected 
-Columns Selected: %r
+%r KNN Nearest Neighbors Selected \n
+Columns Selected: %r \n
+\n
+_%r seconds_ \n
 
-%r seconds
 
-
-        """ % (date, clock, self.trials, permutations, self.knn_num, percentage, knn_num, columns, timer) 
+        """ % (date, clock, self.trials, columns, self.knn_num, percentage, knn_num, permutations, timer) 
         
 
         with open("readme.md", "a") as myfile:
@@ -206,6 +208,6 @@ Columns Selected: %r
 
 if __name__ == '__main__':
     
-    boat = BigBoat("train.csv", 5, 50)
+    boat = BigBoat("train.csv", 10, 250)
 
     print boat.main()
