@@ -1,5 +1,8 @@
 import time
 import itertools
+import datetime
+
+
 
 import pandas as pd
 import matplotlib.pyplot as plt
@@ -13,10 +16,10 @@ import scipy
 
 class BigBoat(object):
 
-    def __init__(self, file, state_num, knn_num):
+    def __init__(self, file, trials, knn_num):
 
         self.df = pd.read_csv(file)
-        self.state_num = state_num
+        self.trials = trials
         self.knn_num = knn_num
 
 
@@ -65,19 +68,41 @@ class BigBoat(object):
             
             return y[1] 
 
-        self.df["married_female"] = self.df.Name.apply(ms)
+        self.df["Married_Female"] = self.df.Name.apply(ms)
 
-    @staticmethod
-    def evaluate(X, y, state_num, knn_num):
+
+        def ag(x):
+            if x == "missing":
+                return 0
+            else:
+                return 1
+            
+        self.df['Age_Known'] = self.df.Age.apply(ag)
+
+        self.df['Cabin_Known'] = self.df.Cabin.apply(ag)
+
+        def l(x):
+            for elem in x:
+                try:
+                    if int(elem):
+                        return 0
+                except ValueError:
+                    return 1
+
+        self.df["TicketswLetters"] = self.df.Ticket.apply(l)
+
+
+
+    def evaluate(self, X, y):
         """
         Evaluates numberous iterations of train-test-split with numberous nearest neighbors
 
         Returns the highest average score with the corresponding nearest neighbor
         """
         results = {}
-        for state in xrange(1, state_num): ### Number of train-test-split iterations to do
+        for state in xrange(1, self.trials): ### Number of train-test-split iterations to do
             X_train, X_test, y_train, y_test = train_test_split(X, y, random_state=state)
-            for num in xrange(1, knn_num): #number of nearest neighbors to try
+            for num in xrange(1, self.knn_num): #number of nearest neighbors to try
                 knn = KNeighborsClassifier(n_neighbors=num)
                 knn.fit(X_train, y_train)
                 y_pred = knn.predict(X_test)
@@ -91,7 +116,7 @@ class BigBoat(object):
         
         report = [] 
         for key, value in results.iteritems(): #reviews all results and returns the greatest average score with n_neighbors num
-            report.append((np.mean(value), key))
+            report.append(((round(np.mean(value), 4)), key))
 
         return max(report)
 
@@ -116,21 +141,57 @@ class BigBoat(object):
             
         return combo    
 
-    def feature_combination(self, combo, state_num, knn_num):
-        now = time.time()
+    def feature_combination(self, combo):
+        start = time.time()
         column_list = []
-        count = 0
-        for elem in combo:
-            X = self.df[elem].values 
-            y = self.df.Survived.values
-            column_list.append((self.evaluate(X, y, state_num, knn_num), elem))
-            count +=1
         
-        return max(column_list), count, round(time.time() - now, 0)
+        for columns in combo:
+            X = self.df[columns].values 
+            y = self.df.Survived.values
+            column_list.append((self.evaluate(X, y), columns))
+            
+
+
+        result = max(column_list)
+        timer = round(time.time() - start, 0)
+
+        return result, len(combo), timer
 
 
     def test(self):
         print self.df.head(5)
+
+    def report(self):
+        result, count, timer = self.results
+        knn_test, permutations = result
+        percentage, knn_num = knn_test
+
+        ts = time.time()
+        st = datetime.datetime.fromtimestamp(ts)
+        date = st.strftime('%Y-%m-%d')
+        clock = st.strftime('%H:%M:%S')
+
+        test_report = """ \
+        
+_Test on %r at %r_
+
+%r Random train-test-split trials
+%r Total column permutations 
+c
+
+*%r Average Correct Prediction*
+
+%r KNN Nearest Neighbors Selected 
+Columns Selected: %r
+
+%r seconds
+
+
+        """ % (date, clock, self.trials, permutations, self.knn_num, percentage, knn_num, columns, timer) 
+        
+
+        with open("readme.md", "a") as myfile:
+            myfile.write(test_report)
 
 
     def main(self):
@@ -138,10 +199,13 @@ class BigBoat(object):
         self.setUP()
         self.clean()
         combo = self.combo_gen()
-        return self.feature_combination(combo, self.state_num, self.knn_num)
+        self.results = self.feature_combination(combo)
+        self.report()
+        return self.results
+
 
 if __name__ == '__main__':
     
-    boat = BigBoat("train.csv", 2, 10)
+    boat = BigBoat("train.csv", 5, 50)
 
     print boat.main()
